@@ -1,0 +1,1 @@
+# Menyimpan data `statis` yang di perlukan beberapa `component`
