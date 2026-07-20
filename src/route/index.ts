@@ -1,11 +1,11 @@
 import {createRouter, createWebHistory} from "vue-router"
 import ErrorPages from '../error_pages/ErrorPages.vue'
-import Test from '../testing/Test.vue'
+import Testingpages from '../testing/Testingpages.vue'
 
 const routes = [
     {
         path: "/",
-        component: Test
+        component: Testingpages
     },
     // TODO: Error pages route
     {   
