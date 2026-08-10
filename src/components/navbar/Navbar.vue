@@ -1,38 +1,47 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router';
 import { Phone, Mail, MapPin } from 'lucide-vue-next';
-import NavMobile from '../navmobile/NavMobile.vue';
+import NavMobile from './NavMobile.vue';
+import { navmenu } from '../../store/navmenu.ts';
+
+const {menu} = navmenu()
 
 const asset_image = {
     images: "/images/Logo-cakra (2).png",
     alt_Data: "logo-cakra",
 }
 
-const menu_data = [
-    { name: "Home", navto: "/" },
-    { name: "About", navto: "/about" },
-    { name: "products", navto: "/products" },
-    { name: "FAQ", navto: "/faq" },
-    { name: "Contact", navto: "/contact" },
+const current_location = [
+  {
+    location : "Makassar, Sulawesi Selatan"
+  },
+  {
+    location : "Badung Bali"
+  },
 ]
+
+const current_contact = {
+  phone: "+62 813-438-810-00",
+  email: "info@cakrasoft.net"
+}
 </script>
 
 <template>
-  <nav class="w-full">
+  <nav class="w-full py-3 fixed bg-white">
     <div class="max-w-6xl mx-auto flex items-center justify-between gap-2 px-3">
       <a href="/">
         <img
-          <img
           :src="asset_image.images"
           :alt="asset_image.alt_Data"
           width="100"
           height="100"
-        >
+          fetchpriority="high"
+        />
       </a>
 
       <ul class="hidden md:flex md:flex-row md:gap-10">
         <li 
-          v-for="(item, index) in menu_data" 
+          v-for="(item, index) in menu" 
           :key="index"
           class="relative group"
         >
@@ -48,15 +57,19 @@ const menu_data = [
             <div class="flex flex-col gap-3 text-sm">
               <a href="tel:+6281234567890" class="flex items-center gap-3 text-gray-700 hover:text-stone-600">
                 <Phone class="w-4 h-4 shrink-0" />
-                <span>+62 812-3456-7890</span>
+                <span>{{ current_contact.phone }}</span>
               </a>
-              <a href="mailto:hello@yourcompany.com" class="flex items-center gap-3 text-gray-700 hover:text-stone-600">
+              <a :href="`mailto:${current_contact.email}`" class="flex items-center gap-3 text-gray-700 hover:text-stone-600">
                 <Mail class="w-4 h-4 shrink-0" />
-                <span>hello@yourcompany.com</span>
+                <span>{{ current_contact.email }}</span>
               </a>
-              <div class="flex items-center gap-3 text-gray-700">
+              <div
+                class="flex items-center gap-3 text-gray-700"
+                v-for="(item, index) in current_location"  
+                :key="index"
+                >
                 <MapPin class="w-4 h-4 shrink-0" />
-                <span>Ubud, Bali, Indonesia</span>
+                <span>{{ item.location }}</span>
               </div>
             </div>
           </div>
@@ -70,7 +83,7 @@ const menu_data = [
         Request Demo
       </RouterLink>
 
-      <div class="block md:hidden">
+      <div class="block  md:hidden">
         <NavMobile />
       </div>
     </div>

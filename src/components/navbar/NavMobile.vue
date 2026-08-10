@@ -2,23 +2,25 @@
 import { ref } from 'vue'
 import { Equal, X, Phone, Mail } from 'lucide-vue-next'
 import { RouterLink } from 'vue-router'
+import { navmenu } from '../../store/navmenu'
 
-const menu_data = [
-    { name: "Beranda", navto: "/" },
-    { name: "Products", navto: "/products" },
-    { name: "About", navto: "/about" },
-    { name: "FAQ", navto: "/faq" },
-    { name: "Contact", navto: "/contact" },
-]
+const {menu} = navmenu()
+
+const current_contact = {
+  phone: "+62 813-438-810-00",
+  email: "info@cakrasoft.net"
+}
 
 const isOpen = ref(false)
 const handleMenu = () => {
     isOpen.value = !isOpen.value
 }
+
+
 </script>
 
 <template>
-  <menu class="relative">
+  <menu class="relative bg-white">
     <button 
       class="relative w-6 h-6 cursor-pointer z-50" 
       @click="handleMenu"
@@ -47,7 +49,7 @@ const handleMenu = () => {
       >
         <div class="flex flex-col text-lg">
           <RouterLink 
-            v-for="(item, index) in menu_data" 
+            v-for="(item, index) in menu" 
             :key="index"
             :to="item.navto"
             @click="isOpen = false"
@@ -63,14 +65,14 @@ const handleMenu = () => {
             class="flex items-center gap-3 text-gray-700"
           >
             <Phone class="w-5 h-5" />
-            <span>+62 812-3456-7890</span>
+            <span>{{ current_contact.phone }}</span>
           </a>
           <a 
-            href="mailto:hello@yourcompany.com" 
+            :href="`mailto:${current_contact.email}`" 
             class="flex items-center gap-3 text-gray-700"
           >
             <Mail class="w-5 h-5" />
-            <span class="text-blue-600">hello@yourcompany.com</span>
+            <span class="text-blue-600">{{ current_contact.email }}</span>
           </a>
 
           <RouterLink 

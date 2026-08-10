@@ -1,1 +1,0 @@
-# Ini untuk `global state pinia`
