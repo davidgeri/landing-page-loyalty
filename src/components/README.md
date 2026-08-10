@@ -1,1 +1,0 @@
-# taruh semua komponent yang di `perlukan oleh views di sini`

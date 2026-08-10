@@ -1,1 +1,0 @@
-# Menampilkan isi halaman yang akan di gunakna di `/route`
