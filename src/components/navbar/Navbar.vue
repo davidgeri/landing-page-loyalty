@@ -27,7 +27,7 @@ const current_contact = {
 </script>
 
 <template>
-  <nav class="w-full py-3 fixed bg-white">
+  <nav class="w-full py-3 fixed bg-white z-50">
     <div class="max-w-6xl mx-auto flex items-center justify-between gap-2 px-3">
       <a href="/">
         <img

@@ -14,6 +14,7 @@ const current_contact = {
 const isOpen = ref(false)
 const handleMenu = () => {
     isOpen.value = !isOpen.value
+    document.body.style.overflow = isOpen.value ? 'hidden' : ''
 }
 
 
