@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Head } from "@unhead/vue/components";
 import {Target, ArrowBigUp, Headset} from "lucide-vue-next"
 
 const data = {
