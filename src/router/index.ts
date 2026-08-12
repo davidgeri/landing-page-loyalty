@@ -5,10 +5,10 @@ import NotFound from "../views/NotFound.vue"
 import About from "../views/About.vue"
 
 const routes = [
-    // {
-    //     path: "/",
-    //     component: Home
-    // },
+    {
+        path: "/",
+        component: Home
+    },
     {   
         path: "/:pathMatch(.*)*",
         component: NotFound
