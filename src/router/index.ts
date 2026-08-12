@@ -2,7 +2,7 @@ import {createRouter, createWebHistory} from "vue-router"
 
 // TODO: Pages
 import NotFound from "../views/NotFound.vue"
-import Home from "../views/Home/Home.vue"
+import About from "../views/About.vue"
 
 const routes = [
     {
@@ -13,6 +13,13 @@ const routes = [
         path: "/:pathMatch(.*)*",
         component: NotFound
     },
+    {
+        path: "/About",
+        component: About
+    }
+    
+    // TODO: Error pages route
+
 ]
 
 export const router = createRouter({
