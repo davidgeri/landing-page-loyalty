@@ -1,17 +1,21 @@
 import {createRouter, createWebHistory} from "vue-router"
 
 // TODO: Pages
-import Testingpages from '../testing/Testingpages.vue'
 import NotFound from "../views/NotFound.vue"
+import About from "../views/About.vue"
 
 const routes = [
-    {
-        path: "/",
-        component: Testingpages
-    },
+    // {
+    //     path: "/",
+    //     component: Home
+    // },
     {   
         path: "/:pathMatch(.*)*",
         component: NotFound
+    },
+    {
+        path: "/About",
+        component: About
     }
     
     // TODO: Error pages route
