@@ -4,7 +4,7 @@ import App from './App.vue'
 import {router} from "./router/index"
 import {createPinia} from "pinia"
 import primevue from "primevue/config"
-import Tooltip from 'primevue/tooltip';
+import Tooltip from 'primevue/tooltip'
 
 
 const app = createApp(App)

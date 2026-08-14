@@ -26,7 +26,7 @@ const duplicatedImages = computed(() => [...props.images, ...props.images])
                 <div class="relative w-full overflow-hidden rounded-3xl  bg-white/90 py-6">
                     <div class="partnership-track flex justify-between items-center gap-3 px-4 sm:px-8">
                     <span class="absolute z-50">250 +</span>
-                        <div v-for="(item, index) in duplicatedImages" :key="`partner-${index}`" class="flex min-w-[140px] items-center justify-center p-2">
+                        <div v-for="(item, index) in duplicatedImages" :key="`partner-${index}`" class="flex min-w-35 items-center justify-center p-2">
                             <img class="h-20 w-auto object-contain" :src="item" alt="partner logo">
                         </div>
                     </div>

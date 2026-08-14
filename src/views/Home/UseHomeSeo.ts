@@ -4,7 +4,7 @@ import { useHead, useSeoMeta } from '@unhead/vue'
 export function useHomeSeo() {
   const siteName = 'Cakrasoft'
   const url = ''
-  const title = 'Cakrasoft Add-ons - Solusi Percepat Pertumbuhan Hotel Anda'
+  const title = 'Cakrasoft Add-ons Solusi Percepat Pertumbuhan Hotel Anda'
   useSeoMeta({
     title,
     ogTitle: title,
@@ -40,7 +40,6 @@ export function useHomeSeo() {
           name: 'Cakrasoft Add-ons',
           applicationCategory: 'BusinessApplication',
           operatingSystem: 'Web',
-          // description,
           url,
           publisher: {
             '@type': 'Organization',
