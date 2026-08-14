@@ -54,7 +54,7 @@ const partnershipImages = [
 <template>
     <Navbar />
     <main class="flex flex-col overflow-hidden md:flex-row md:justify-center">
-        <section class="pt-25 ml-10 mr-10 justify-center items-center" aria-labelledby="hero-title">
+        <section class=" ml-10 mr-10 justify-center items-center pt-24 md:pt-44" aria-labelledby="hero-title">
             <HomeHero :data-hero="dataHero" :tool-tip="toolTip" />
             <HomePartnership :heading="partnershipHeading"
             :images="partnershipImages"/>
