@@ -29,5 +29,5 @@ const props = defineProps<Props>()
         </span>
     </div>
 
-    <p class="text-[13px] md:w-60 mt-3">{{ props.data.desk }}</p>
+    <p class="text-[13px] md:w-60 mt-3 md:mb-20">{{ props.data.desk }}</p>
 </template>

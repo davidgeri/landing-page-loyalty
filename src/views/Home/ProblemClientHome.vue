@@ -24,7 +24,7 @@ const cardDat = {
 </script>
 
 <template>
-    <div class="flex justify-center flex-col gap-5 md:flex-row mt-16">
+    <div class="flex justify-center flex-col gap-10 md:flex-row mt-16">
         <div class="flex flex-col gap-2 md:w-150 md:mt-32 ">
             <p class="border px-5 border-red-500 text-red-600 rounded-xl font-semibold w-42">{{ data.heading }}</p>
             <h1 class="text-4xl font-semibold">{{ data.title }}</h1>

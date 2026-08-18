@@ -3,9 +3,9 @@ import { RouterLink } from 'vue-router';
 import { ref, watch } from 'vue';
 import { MapPin, Phone, Mail } from "lucide-vue-next"
 import Popover from 'primevue/popover';
-import Button from 'primevue/button';
 import SocialMedia from './SocialMedia.vue';
 import FooterIco from './FooterIco.vue';
+import ButtonVue from '../button/ButtonVue.vue';
 
 const showLocation = ref<string>("")
 
@@ -102,12 +102,16 @@ const handleBranchOffice = (event: Event) => {
                     <a class="text-[#899DB9]" href="mailto:info@cakrasoft.net">info@cakrasoft.net</a>
                     <a class="text-[#899DB9]" href="tel:+6285572297770">+62 855-7229-777</a>
 
-                    <Button type="button" @click="handleHeadOffice">
+                    <ButtonVue 
+                    class="cursor-pointer"
+                    :onClick="handleHeadOffice">
                         Head Office
-                    </Button>
-                    <Button type="button" @click="handleBranchOffice">
+                    </ButtonVue>
+                    <ButtonVue 
+                    class="cursor-pointer"
+                    :onClick="handleBranchOffice">
                         Branch Office
-                    </Button>
+                    </ButtonVue>
 
                     <Popover ref="HeadOffice">
                         <div class="bg-white w-64 p-4 rounded-lg rounded-l-none rounded-t-lg">
