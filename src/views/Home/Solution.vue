@@ -1,68 +1,61 @@
 <script setup lang="ts">
-import { MoveRight } from "lucide-vue-next"
-import { RouterLink } from "vue-router";
-import OutlinePill from "../../components/outlinepill/OutlinePill.vue";
-import type{ Component } from "vue";
+import { MoveRight } from '@lucide/vue'
+import { RouterLink } from 'vue-router'
+import type { Component } from 'vue'
+import OutlinePill from '../../components/outlinepill/OutlinePill.vue'
 
-interface Button {
+interface SolutionAction {
     name: string
     navto: string
 }
 
-interface Solution {
+interface SolutionItem {
     ico: string | Component
     title: string
     desk: string
-    button: Button
+    button: SolutionAction
 }
 
 interface Props {
-    datas: Solution[]
+    datas: SolutionItem[]
 }
 
-const props = defineProps<Props>()
+const { datas } = defineProps<Props>()
 </script>
 
 <template>
-    <main class="flex flex-col mt-14 gap-3">
-
-        <header class="flex mb-10 flex-col justify-center text-center items-center">
+    <section class="mt-14" aria-labelledby="solution-title">
+        <header class="mb-10 flex flex-col items-center gap-3 text-center">
             <OutlinePill text="Solution" class-pil="border-blue-500 text-blue-500" />
-            <h2 class="text-4xl font-semibold">Solusi Add-ons Cakrasoft</h2>
+            <h2 id="solution-title" class="text-3xl font-semibold sm:text-4xl">Solusi Add-ons Cakrasoft</h2>
         </header>
 
-        <section aria-label="Daftar solusi Cakrasoft">
-            <ul class="grid grid-cols-1 md:grid-cols-3 md:flex-row list-none p-0 m-0">
-
-                <li
-                    class="flex bg-white flex-col gap-3 p-5 border rounded-md hover:scale-105 duration-300 group/card w-full md:w-sm"
-                    v-for="(item, index) in props.datas"
-                    :key="index"
-                >
-                    <article class="flex flex-col gap-3 h-full">
-                        <div v-if="typeof item.ico === 'string'">
-                            <img
-                            :src="item.ico"
-                            :alt="`Ikon ${item.title}`"
-                            class="w-10 h-10 text-blue-500 group-hover/card:-translate-y-2 duration-300"
-                        />
-                        </div>
-                        <div v-else>
-                            <Component :is="item.ico" class="w-10 h-10 text-blue-500 group-hover/card:-translate-y-2 duration-300"
-                            aria-hidden="true" />
-                        </div>
-                        <h3 class="text-3xl font-semibold">{{ item.title }}</h3>
-                        <p>{{ item.desk }}</p>
-                        <RouterLink
-                            class="mt-10 border-2 rounded-md border-blue-500 p-2 flex gap-3 items-center justify-center group"
-                            :to="item.button.navto"
-                        >
-                            <span class="font-semibold text-blue-500">{{ item.button.name }}</span>
-                            <MoveRight class="w-5 h-5 text-blue-500 group-hover:translate-x-2 duration-300" />
-                        </RouterLink>
-                    </article>
-                </li>
-            </ul>
-        </section>
-    </main>
+        <ul class="grid list-none grid-cols-1 gap-5 p-0 sm:grid-cols-2 lg:grid-cols-3" aria-label="Daftar solusi Cakrasoft">
+            <li v-for="item in datas" :key="item.title" class="h-full">
+                <article class="group/card flex h-full flex-col gap-4 rounded-lg border bg-white p-5 transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg">
+                    <img
+                        v-if="typeof item.ico === 'string'"
+                        :src="item.ico"
+                        :alt="`Ikon ${item.title}`"
+                        class="h-10 w-10 transition-transform duration-300 group-hover/card:-translate-y-1"
+                    >
+                    <Component
+                        :is="item.ico"
+                        v-else
+                        class="h-10 w-10 text-blue-500 transition-transform duration-300 group-hover/card:-translate-y-1"
+                        aria-hidden="true"
+                    />
+                    <h3 class="text-2xl font-semibold sm:text-3xl">{{ item.title }}</h3>
+                    <p class="leading-relaxed text-stone-600">{{ item.desk }}</p>
+                    <RouterLink
+                        class="group mt-auto flex items-center justify-center gap-3 rounded-md border-2 border-blue-500 p-2 text-center"
+                        :to="item.button.navto"
+                    >
+                        <span class="font-semibold text-blue-500">{{ item.button.name }}</span>
+                        <MoveRight class="h-5 w-5 text-blue-500 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
+                    </RouterLink>
+                </article>
+            </li>
+        </ul>
+    </section>
 </template>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-import { Cloud, Award  } from "lucide-vue-next"
+import { Cloud, Award  } from "@lucide/vue"
 import { RouterLink } from "vue-router"
 import Badge from './Badge.vue';
 
@@ -35,55 +35,57 @@ const flight1 = '<div class="flex gap-1 text-sm">Mulai Coba <span class="-mr-1 i
 </script>
 
 <template>
-    <div class="flex flex-col md:flex-row md:justify-between">
-        <div class="flex flex-col gap-3">
+    <div class="flex flex-col gap-10 md:flex-row md:items-center md:justify-between md:gap-8">
+        <div class="flex min-w-0 flex-col gap-3 md:max-w-xl">
             <p
-                class="text-[10px] text-stone-400 font-bold border border-stone-400 rounded-xl px-5 p-0.5 md:w-70 flex gap-3 items-center">
-                <span class="absolute animate-ping w-2 h-2 bg-green-500 rounded-full -mt-6" aria-hidden="true"></span>
-                <span class="absolute w-2 h-2 bg-green-500 rounded-full -mt-6" aria-hidden="true"></span>
-                <Cloud class="text-blue-500" aria-hidden="true" />
-                <span>{{ dataHero.title }}</span>
+                class="flex w-fit max-w-full items-center gap-2 rounded-xl border border-stone-400 px-3 py-1 text-[10px] font-bold text-stone-400 sm:px-5">
+                <span class="relative flex h-2 w-2 shrink-0" aria-hidden="true">
+                    <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500"></span>
+                    <span class="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
+                </span>
+                <Cloud class="h-4 w-4 shrink-0 text-blue-500" aria-hidden="true" />
+                <span class="truncate">{{ dataHero.title }}</span>
             </p>
-            <h1 id="hero-title" class="text-3xl font-semibold text-stone-600 md:text-5xl md:w-xl ">Solusi Add-ons <span
-                    class="border-2 border-dashed px-5">Untuk</span> <span class="text-blue-500">Mempercepat</span>
+            <h1 id="hero-title" class="text-3xl font-semibold leading-tight text-stone-600 sm:text-4xl md:text-5xl">Solusi Add-ons <span
+                    class="inline-block border-2 border-dashed px-2 sm:px-5">Untuk</span> <span class="text-blue-500">Mempercepat</span>
                 pertumbuhan Hotel</h1>
-            <p class="text-stone-500 text-sm md:text-xl md:w-xl ">{{ dataHero.desk }}</p>
+            <p class="text-sm leading-relaxed text-stone-500 sm:text-base md:text-xl">{{ dataHero.desk }}</p>
             <div class="flex flex-col">
                 <nav aria-label="Aksi utama hero"
-                    class="flex text-center items-center flex-col md:flex-row gap-5 md:gap-10">
+                    class="flex flex-col items-center gap-3 text-center sm:flex-row md:gap-5">
                     <RouterLink :to="dataHero.left_button.navto"
-                        class="bg-blue-500 text-white p-2 text-lg font-semibold rounded-xl w-full hover:bg-blue-400 duration-300"
+                        class="w-full rounded-xl bg-blue-500 p-2 text-lg font-semibold text-white duration-300 hover:bg-blue-400 sm:w-auto sm:flex-1"
                         v-tooltip.top="{ value: flight1, escape: false }">{{ dataHero.left_button.name }} 
                     </RouterLink>
 
-                    <RouterLink class="border border-blue-500 rounded-xl p-2 w-full font-semibold text-lg text-blue-500"
+                    <RouterLink class="w-full rounded-xl border border-blue-500 p-2 text-lg font-semibold text-blue-500 sm:w-auto sm:flex-1"
                         :to="dataHero.right_button.navto">
                         {{ dataHero.right_button.name }}</RouterLink>
                 </nav>
             </div>
             <Badge />
         </div>
-        <figure class="group mt-20 md:mt-0">
-            <span class="text-2xl absolute hidden font-semibold group-hover:block ml-42 text-blue-500">Explore
+        <figure class="group relative mx-auto mt-4 w-full max-w-md md:mt-0 md:max-w-xl">
+            <span class="absolute left-1/2 top-1/2 z-10 hidden -translate-x-1/2 -translate-y-1/2 text-center text-xl font-semibold text-blue-500 group-hover:block sm:text-2xl">Explore
                 Product →</span>
             <div class="group-hover:blur-md duration-300">
-                <div class="absolute flex items-center px-4 backdrop-blur-sm gap-3 rounded-md border p-1">
+                <div class="absolute left-0 top-[8%] z-10 flex items-center gap-2 rounded-md border bg-white/80 px-2 py-1 backdrop-blur-sm sm:gap-3 sm:px-4">
                     <img src="/images/logo-booking-engine-2.png" class="w-5 h-5" alt="">
                     <p class="hidden md:block">Booking Engine</p>
                 </div>
 
-                <div class="absolute flex items-center px-4 backdrop-blur-2xl ml-50 gap-3 rounded-md border p-1 md:ml-72">
+                <div class="absolute right-0 top-[24%] z-10 flex items-center gap-2 rounded-md border bg-white/80 px-2 py-1 backdrop-blur-2xl sm:gap-3 sm:px-4">
                     <img src="/images/logo-channel-manager.png" class="w-5 h-5" alt="">
                     <p class="hidden md:block">Channel Manager</p>
                 </div>
 
-                <div class="absolute flex items-center px-4 bg-white gap-3 rounded-md  p-1 ml-10 mt-50  border md:mt-82">
+                <div class="absolute bottom-[10%] left-[8%] z-10 flex items-center gap-2 rounded-md border bg-white px-2 py-1 sm:gap-3 sm:px-4">
                     <Award class="w-5 h-5 text-blue-800" />
                     <p class="hidden md:block">Cakra Loyalty</p>
                 </div>
                 
-                <RouterLink to="/">
-                    <img class="w-xl h-xl" :src="dataHero.images" :alt="dataHero.alt_img">
+                <RouterLink to="/products">
+                    <img class="h-auto w-full object-contain" :src="dataHero.images" :alt="dataHero.alt_img">
                 </RouterLink>
             </div>
         </figure>

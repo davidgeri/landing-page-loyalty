@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { Hotel, Clock4, BriefcaseBusiness, Building2, MapPin } from 'lucide-vue-next';
+import { Hotel, Clock4, BriefcaseBusiness, Building2, MapPin } from '@lucide/vue';
 
 const activeMenu = ref('profil');
 
@@ -49,7 +49,7 @@ const detailData = {
 </script>
 
 <template>
-  <section class="bg-gray-50 py-20">
+  <section class=" py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         

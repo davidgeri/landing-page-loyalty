@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router';
 import { ref, watch } from 'vue';
-import { MapPin, Phone, Mail } from "lucide-vue-next"
+import { MapPin, Phone, Mail } from "@lucide/vue"
 import Popover from 'primevue/popover';
 import SocialMedia from './SocialMedia.vue';
 import FooterIco from './FooterIco.vue';

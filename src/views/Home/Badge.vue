@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {Target, ArrowBigUp, Headset} from "lucide-vue-next"
+import {Target, ArrowBigUp, Headset} from "@lucide/vue"
 
 const data = {
     first_badge : {

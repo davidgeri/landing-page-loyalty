@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted } from 'vue';
-import { Network, TrendingUp, MapPinned} from 'lucide-vue-next';
+import { Network, TrendingUp, MapPinned} from '@lucide/vue';
 import { animate } from 'animejs';
 
 const texts = ['Mendukung', 'Menunjang', 'Memajukan'];

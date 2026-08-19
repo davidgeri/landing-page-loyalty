@@ -7,9 +7,10 @@ import ProblemClientHome from './ProblemClientHome.vue';
 import Solution from './Solution.vue';
 import Benefits from './Benefits.vue';
 import HowWork from './HowWork.vue';
-import { Award } from 'lucide-vue-next';
+import { Award } from '@lucide/vue';
 import ProductIntegration from './ProductIntegration.vue';
-
+import Testimonial from './Testimonial.vue';
+import Cta from '../About/Cta.vue';
 // import {useHomeSeo} from './UseHomeSeo.ts'
 
 // * SEO 
@@ -81,7 +82,7 @@ const solutionDat = [
             name: "Pelajari Lebih Lanjut",
             navto: "/product/cakra-loyalty"
         },
-    }, 
+    },
 ]
 
 const benefits = [
@@ -93,12 +94,30 @@ const benefits = [
     "Mudah di gunakan oleh tim hotel."
 ]
 
+const viewCta = {
+    subheading: "Langkah Selanjutnya",
+    title: "Temukan Solusi Add-ons yang Tepat untuk Hotel",
+    desk: " Konsultasikan kebutuhan hotel Anda bersama tim Cakrasoft dan dapatkan informasi produk yang sesuai.",
+}
+
+const button =  {
+    leftbtn : {
+      name: "Request Demo",
+      navto: "/request-demo"
+    },
+    rightbtn : {
+      name: "Contact Our Team",
+      navto : "/contact-team"
+    }
+}
 </script>
 
 <template>
     <Navbar />
-    <main class="flex flex-col overflow-hidden md:flex-row md:justify-center">
-        <section class=" ml-10 mr-10 justify-center items-center pt-24 md:pt-44" aria-labelledby="hero-title">
+    <main class="w-full overflow-x-clip">
+        <section
+            class="mx-auto w-full max-w-7xl px-4 pt-24 pb-16 sm:px-6 sm:pt-28 sm:pb-20 md:px-8 md:pt-36 lg:px-10 lg:pt-40 lg:pb-24"
+            aria-labelledby="hero-title">
             <HomeHero :data-hero="dataHero" :tool-tip="toolTip" />
             <HomePartnership :heading="partnershipHeading" :images="partnershipImages" />
             <ProblemClientHome />
@@ -106,7 +125,11 @@ const benefits = [
             <Benefits :benefits="benefits" />
             <HowWork />
             <ProductIntegration />
+            <Testimonial />
         </section>
     </main>
+    <div class="-mb-22">
+        <Cta :view="viewCta" :button="button" />
+    </div>
     <FooterComponent />
 </template>
