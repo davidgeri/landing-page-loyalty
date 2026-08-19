@@ -33,15 +33,11 @@ const detailData = {
         name: "Head Office",
         city: "Makassar",
         address: "Jl. Abdul Kudus Perumahan Barombong Permai C5 Kel. Tamalate Kec. Barombong, Makassar, Sulawesi Selatan",
-        whatsapp: "+62 811 3970 899",
-        email: "info@cakrasoft.net"
       },
       {
         name: "Branch Office",
         city: "Bali",
         address: "Jl. Raya Mambal Ubud No. 46, Br. Sigaran, Desa Mekar Bhuwana, Badung, Bali 80352",
-        whatsapp: "+62 855 7229 777",
-        email: null
       }
     ]
   }
@@ -117,11 +113,7 @@ const detailData = {
 
             <template v-if="detailData[activeMenu as keyof typeof detailData].type === 'offices'">
               <div class="space-y-4">
-                <div 
-                  v-for="(office, idx) in detailData.areaOperasional.offices" 
-                  :key="idx"
-                  class="p-4 bg-gray-50 rounded-xl border border-gray-200/80 hover:border-blue-300 transition-colors"
-                >
+                <div v-for="(office, idx) in detailData.areaOperasional.offices" :key="idx">
                   <div class="flex items-center justify-between mb-2">
                     <h4 class="font-bold text-gray-800 text-base flex items-center gap-2">
                       <span class="w-2.5 h-2.5 rounded-full bg-blue-600"></span>
@@ -131,10 +123,6 @@ const detailData = {
                   <p class="text-xs text-gray-600 leading-relaxed mb-3">
                     {{ office.address }}
                   </p>
-                  <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-gray-600 font-medium pt-2 border-t border-gray-200">
-                    <span>WhatsApp: <strong class="text-gray-800">{{ office.whatsapp }}</strong></span>
-                    <span v-if="office.email">Email: <strong class="text-gray-800">{{ office.email }}</strong></span>
-                  </div>
                 </div>
               </div>
             </template>

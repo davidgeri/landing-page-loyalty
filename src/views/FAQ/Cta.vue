@@ -11,7 +11,7 @@
       </div>
 
       <h2 class="text-3xl md:text-5xl font-extrabold text-gray-700 mb-4 leading-tight">
-        Temukan Solusi Add-ons  <br class="hidden sm:block" /> yang Tepat untuk Hotel Anda
+        Masih punya pertanyaan <br class="hidden sm:block" /> yang belum terjawab?
       </h2>
 
       <p class="text-gray-500 max-w-lg mx-auto text-base md:text-lg mb-8">

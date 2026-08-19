@@ -3,6 +3,9 @@ import {createRouter, createWebHistory} from "vue-router"
 // TODO: Pages
 import NotFound from "../views/NotFound.vue"
 import About from "../views/About.vue"
+import Home from "../views/Home/Home.vue"
+import Product from "../views/Product.vue"
+import Detail from "../views/Product/Detail.vue"
 
 const routes = [
     {
@@ -16,8 +19,21 @@ const routes = [
     {
         path: "/About",
         component: About
+    },
+    {
+        path: "/Product",
+        component: Product
+    },
+    {
+        path: "/Product/:slug",
+        name: "product-detail",
+        component: Detail   
+    },
+    {
+        path: "/FAQ",
+        component: () => import("../views/FAQ.vue")
     }
-    
+
     // TODO: Error pages route
 
 ]
