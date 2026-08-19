@@ -60,4 +60,6 @@ const props = defineProps<Props>()
       </div>
     </div>
   </section>
+
+  <div class="w-full h-16 bg-[#111827]"></div>
 </template>
