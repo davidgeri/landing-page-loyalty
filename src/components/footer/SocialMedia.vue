@@ -14,10 +14,10 @@
 </script>
 
 <template>
-    <nav :aria-label="props.aria" class="flex mt-2 gap-2">
+    <nav :aria-label="props.aria" class="flex gap-2 md:absolute md:mt-42">
                     <a v-for="social in props.sosial" :key="social.name" :href="social.href" target="_blank"
                         rel="noopener noreferrer" :aria-label="social.name"
-                        class="flex py-1 gap-2 rounded-md items-center group hover:border duration-100 hover:px-3">
+                        class="flex py-1 border border-[#0F172A] gap-2 rounded-md items-center group hover:border-white hover:duration-100 hover:px-3">
                         <svg v-if="social.name === 'Instagram'" xmlns="http://www.w3.org/2000/svg" width="25"
                             height="25" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M0 0h24v24H0z" fill="none" />

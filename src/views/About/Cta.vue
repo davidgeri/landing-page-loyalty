@@ -1,36 +1,62 @@
+<script setup lang="ts">
+
+import { MoveRight } from "lucide-vue-next"
+
+import { RouterLink } from "vue-router"
+
+interface Cta {
+  subheading: string
+  title: string
+  desk: string
+}
+
+interface Button {
+    leftbtn: {
+      name: string
+      navto: string
+    }
+    rightbtn: {
+      name: string
+      navto: string
+    }
+}
+
+interface Props {
+  view : Cta
+  button : Button
+}
+
+const props = defineProps<Props>()
+
+</script>
+
 <template>
-  <section class="pt-16 px-4 sm:px-6 lg:px-8 bg-gray-50/50 flex flex-col items-center">
-    
-    <div class="w-full max-w-4xl bg-white rounded-t-[2.5rem] border-t border-l border-r border-gray-200 px-6 py-12 md:py-16 text-center shadow-sm">
-      
-      <div class="flex justify-center mb-5">
-        <span class="inline-flex items-center text-sm font-semibold text-gray-700">
-          <span class="w-2.5 h-2.5 bg-green-500 rounded-full mr-2 ring-4 ring-green-100"></span>
-          Langkah selanjutnya
-        </span>
-      </div>
-
-      <h2 class="text-3xl md:text-5xl font-extrabold text-gray-700 mb-4 leading-tight">
-        Temukan Solusi Add-ons  <br class="hidden sm:block" /> yang Tepat untuk Hotel Anda
-      </h2>
-
-      <p class="text-gray-500 max-w-lg mx-auto text-base md:text-lg mb-8">
-        Konsultasikan kebutuhan hotel Anda bersama tim Cakrasoft dan dapatkan informasi produk yang sesuai.
+  <section class="py-20 px-4">
+    <div class="max-w-4xl mx-auto cursor-help hover:border-black hover:shadow-xl duration-300 bg-white border border-gray-200 rounded-2xl rounded-b-none p-10 text-center shadow-sm">
+      <span class="flex justify-center">
+        <div class="flex items-center py-1 text-md font-semibold rounded-full mb-4 gap-3">
+          <p class="w-4 h-4 rounded-full bg-green-500 absolute animate-ping"></p>
+          <p class="w-4 h-4 rounded-full bg-green-500"></p>
+          <p>{{ props.view.subheading }}</p>
+        </div>
+      </span>
+      <h2 class="text-2xl md:text-5xl font-bold text-gray-900 mb-4">{{ props.view.title }}</h2>
+      <p class="text-md text-gray-500 mb-8 max-w-lg mx-auto">
+        {{ props.view.desk }}
       </p>
-
-      <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-        
-        <button class="w-full sm:w-auto px-8 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors shadow-sm">
-          Request Demo
-        </button>
-
-        <button class="w-full sm:w-auto px-8 py-3 bg-white border border-blue-200 text-blue-600 font-medium rounded-lg hover:bg-blue-50 transition-colors flex items-center justify-center gap-2 shadow-sm">
-          Contact Our Team
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-          </svg>
-        </button>
-
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <RouterLink :to="props.button.leftbtn.navto"
+          class=" bg-blue-600 hover:bg-blue-700 text-white px-10 py-3 rounded-md text-xl font-semibold transition-colors">
+          {{ props.button.leftbtn.name }}
+          </RouterLink>
+        <RouterLink
+          :to="props.button.rightbtn.navto"
+          class="bg-white border border-blue-600 text-blue-600 px-6 py-3 rounded-md text-xl font-semibold transition-colors flex items-center justify-center gap-2 group">
+          <span class="flex gap-3">
+            {{ props.button.rightbtn.name }}
+            <MoveRight class="group-hover:translate-x-2 duration-300" />
+          </span>
+          </RouterLink>
       </div>
     </div>
   </section>

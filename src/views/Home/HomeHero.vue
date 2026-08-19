@@ -1,8 +1,10 @@
 <script setup lang="ts">
 
-import { Cloud } from "lucide-vue-next"
+import { Cloud, Award  } from "lucide-vue-next"
 import { RouterLink } from "vue-router"
 import Badge from './Badge.vue';
+
+const flight1 = '<div class="flex gap-1 text-sm">Mulai Coba <span class="-mr-1 inline-flex items-center justify-center leading-none px-1.5 rounded-sm bg-blue-600 text-blue-50 text-xs font-medium font-mono">TRY NOW</span></div>';
 
     interface Left_button {
         name: string
@@ -25,7 +27,7 @@ import Badge from './Badge.vue';
     
     interface Props {
         dataHero: DataHero
-        flight1: string
+        toolTip: string
     }
 
     const props = defineProps<Props>()
@@ -51,7 +53,7 @@ import Badge from './Badge.vue';
                     class="flex text-center items-center flex-col md:flex-row gap-5 md:gap-10">
                     <RouterLink :to="dataHero.left_button.navto"
                         class="bg-blue-500 text-white p-2 text-lg font-semibold rounded-xl w-full hover:bg-blue-400 duration-300"
-                        v-tooltip.top="{ value: flight1, escape: false }">{{ dataHero.left_button.name }}
+                        v-tooltip.top="{ value: flight1, escape: false }">{{ dataHero.left_button.name }} 
                     </RouterLink>
 
                     <RouterLink class="border border-blue-500 rounded-xl p-2 w-full font-semibold text-lg text-blue-500"
@@ -61,10 +63,25 @@ import Badge from './Badge.vue';
             </div>
             <Badge />
         </div>
-        <figure class="group">
+        <figure class="group mt-20 md:mt-0">
             <span class="text-2xl absolute hidden font-semibold group-hover:block ml-42 text-blue-500">Explore
                 Product →</span>
             <div class="group-hover:blur-md duration-300">
+                <div class="absolute flex items-center px-4 backdrop-blur-sm gap-3 rounded-md border p-1">
+                    <img src="/images/logo-booking-engine-2.png" class="w-5 h-5" alt="">
+                    <p class="hidden md:block">Booking Engine</p>
+                </div>
+
+                <div class="absolute flex items-center px-4 backdrop-blur-2xl ml-50 gap-3 rounded-md border p-1 md:ml-72">
+                    <img src="/images/logo-channel-manager.png" class="w-5 h-5" alt="">
+                    <p class="hidden md:block">Channel Manager</p>
+                </div>
+
+                <div class="absolute flex items-center px-4 bg-white gap-3 rounded-md  p-1 ml-10 mt-50  border md:mt-82">
+                    <Award class="w-5 h-5 text-blue-800" />
+                    <p class="hidden md:block">Cakra Loyalty</p>
+                </div>
+                
                 <RouterLink to="/">
                     <img class="w-xl h-xl" :src="dataHero.images" :alt="dataHero.alt_img">
                 </RouterLink>

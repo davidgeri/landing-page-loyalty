@@ -2,15 +2,20 @@ import {createRouter, createWebHistory} from "vue-router"
 
 // TODO: Pages
 import NotFound from "../views/NotFound.vue"
-import About from "../views/About.vue"
 import Home from "../views/Home/Home.vue"
 import Product from "../views/Product.vue"
 import Detail from "../views/Product/Detail.vue"
+import About from "../views/About/About.vue"
+import RequestDemo from "../views/Request-Demo/RequestDemo.vue"
 
 const routes = [
     {
         path: "/",
         component: Home
+    },
+    {
+        path: "/request-demo",
+        component: RequestDemo
     },
     {   
         path: "/:pathMatch(.*)*",
