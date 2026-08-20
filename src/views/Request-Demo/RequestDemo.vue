@@ -62,12 +62,12 @@ const handleFormSubmit = (): void => {
 
           <div>
             <span
-              class="inline-block px-3 py-1 bg-blue-50 border border-blue-200 text-[10px] font-black text-[#0c6cf2] rounded-full uppercase tracking-wider">
+              class="inline-block px-3 py-1 bg-blue-50 border border-blue-200 text-[10px] font-semibold text-[#0c6cf2] rounded-full uppercase tracking-wider">
               Request Demo
             </span>
           </div>
 
-          <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+          <h1 class="text-3xl sm:text-4xl font-semibold text-slate-900 tracking-tight leading-tight">
             Kembangkan bisnis hotel Anda dengan produk add-ons
             <span class="text-[#0c6cf2]">Cakrasoft.</span>
           </h1>
@@ -140,7 +140,7 @@ const handleFormSubmit = (): void => {
           <div class="bg-white border border-slate-200 rounded-2xl p-5 sm:p-6 lg:p-8 shadow-sm">
 
             <div class="mb-6">
-              <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900">
+              <h2 class="text-xl sm:text-2xl font-semibold text-slate-900">
                 Request <span class="text-[#0c6cf2]">Demo</span>
               </h2>
 
@@ -199,7 +199,7 @@ const handleFormSubmit = (): void => {
                   class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#0c6cf2] focus:border-transparent"
                   required />
               </div>
-            
+
               <div>
                 <label class="block text-sm font-medium text-slate-700 mb-2">
                   Module *
@@ -228,11 +228,11 @@ const handleFormSubmit = (): void => {
 
 
               </div>
-              </form>
-              </div>
-              </div>
-              </div>
-              </div>
-              </div>
-              <Footer />
-              </template>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <Footer />
+</template>
