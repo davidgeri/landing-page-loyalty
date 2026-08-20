@@ -1,9 +1,9 @@
-<script setup>
+<script setup lang="ts">
 import { ref, computed } from 'vue'
 
 const categories = ['Umum', 'Integrasi', 'Harga', 'Keamanan']
-const activeTab = ref('Umum')
-const openFaqId = ref(null)
+const activeTab = ref<string>('Umum')
+const openFaqId = ref<number>(0)
 
 const faqs = [
   { id: 1, 
@@ -139,13 +139,13 @@ const filteredFaqs = computed(() => {
   return faqs.filter(faq => faq.category === activeTab.value)
 })
 
-const toggleFaq = (id) => {
-  openFaqId.value = openFaqId.value === id ? null : id
+const toggleFaq = (id: number) => {
+  openFaqId.value = openFaqId.value === id ? 0 : id
 }
 
-const changeTab = (category) => {
+const changeTab = (category:string ) => {
   activeTab.value = category
-  openFaqId.value = null 
+  openFaqId.value = 0
 }
 </script>
 

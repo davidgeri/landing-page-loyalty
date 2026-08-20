@@ -10,7 +10,7 @@ import HowWork from './HowWork.vue';
 import { Award } from '@lucide/vue';
 import ProductIntegration from './ProductIntegration.vue';
 import Testimonial from './Testimonial.vue';
-import Cta from '../About/Cta.vue';
+import Cta from '../../components/cta/Cta.vue';
 // import {useHomeSeo} from './UseHomeSeo.ts'
 
 // * SEO 
@@ -128,7 +128,7 @@ const button =  {
             <Testimonial />
         </section>
     </main>
-    <div class="-mb-22">
+    <div class="-mb-36">
         <Cta :view="viewCta" :button="button" />
     </div>
     <FooterComponent />

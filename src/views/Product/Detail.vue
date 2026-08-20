@@ -1,12 +1,21 @@
-<script setup>
+<script setup lang="ts">
 import Navbar from '../../components/navbar/Navbar.vue';
 import FooterComponent from '../../components/footer/FooterComponent.vue';
 import { ref, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
+interface ProductType {
+  slug : string 
+  title : string
+  icon : string 
+  image : string 
+  detailDesc : string
+  advantages : string[]
+}
+
 const route = useRoute()
 const router = useRouter()
-const product = ref(null)
+const product = ref<ProductType>()
 
 const products = [
   {
