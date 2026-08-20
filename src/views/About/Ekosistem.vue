@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Share2, Award, CalendarCheck2 } from '@lucide/vue';
+import { Share2, Award, CalendarCheck2 } from 'lucide-vue-next';
 </script>
 
 <template>

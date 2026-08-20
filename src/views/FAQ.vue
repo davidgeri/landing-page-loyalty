@@ -1,11 +1,10 @@
 <script setup lang="ts">
 import FooterComponent from '../components/footer/FooterComponent.vue';
 import Navbar from '../components/navbar/Navbar.vue';
-import Hero from './About/Hero.vue';
-import About from './About/About.vue';
-import CTA from './About/Cta.vue';
-import Ekosistem from './About/Ekosistem.vue';
-import Visimisi from './About/Visimisi.vue';
+import Hero from './FAQ/Hero.vue';
+import Content from './FAQ/Content.vue';
+import CTA from './FAQ/Cta.vue';
+
 </script>
 
 <template>
@@ -16,9 +15,7 @@ import Visimisi from './About/Visimisi.vue';
     </div>
 
     <Hero />
-    <About />
-    <Visimisi />
-    <Ekosistem />
+    <Content />
     <CTA />
     <FooterComponent/>
     

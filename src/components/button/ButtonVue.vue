@@ -1,9 +1,12 @@
-<script setup>
-const props = defineProps({
-    onClick: Function,
-    class: String,
-    title: String
-})
+<script setup lang="ts">
+
+interface Props {
+    onClick: (e: MouseEvent) => void
+    class? : string
+    title? : string
+}
+
+const props = defineProps<Props>()
 </script>
 
 <template>
