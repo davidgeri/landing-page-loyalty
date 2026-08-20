@@ -9,7 +9,7 @@ import InputGroupAddon from 'primevue/inputgroupaddon'
 import Select from 'primevue/select'
 import Textarea from 'primevue/textarea'
 import Button from 'primevue/button'
-import { CalendarDays, CheckCircle2, Crown, Share2 } from 'lucide-vue-next'
+import { CalendarDays, CheckCircle2, Crown, Share2 } from '@lucide/vue'
 
 interface Country {
   name: string

@@ -7,6 +7,7 @@ import Product from "../views/Product.vue"
 import Detail from "../views/Product/Detail.vue"
 import About from "../views/About/About.vue"
 import RequestDemo from "../views/Request-Demo/RequestDemo.vue"
+import Contact from "../views/Contact/Contact.vue"
 
 const routes = [
     {
@@ -16,6 +17,11 @@ const routes = [
     {
         path: "/request-demo",
         component: RequestDemo
+    },
+    
+    {
+    path: "/contact",
+    component: Contact
     },
     {   
         path: "/:pathMatch(.*)*",
