@@ -4,7 +4,7 @@ import Navbar from '../../components/navbar/Navbar.vue';
 import Hero from './Hero.vue';
 import AboutCompany from './AboutCompany.vue';
 import Visimisi from './Visimisi.vue';
-import Cta from './Cta.vue';
+import Cta from '../../components/cta/Cta.vue';
 import Ekosistem from './Ekosistem.vue';
 
 const views = {
@@ -36,7 +36,7 @@ const button =  {
       <AboutCompany />
       <Visimisi />
       <Ekosistem />
-      <div class="-mb-22">
+      <div class="-mb-36">
         <Cta :view="views" :button="button" />
       </div>
       <FooterComponent />

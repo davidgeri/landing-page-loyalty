@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ChartColumnBig, Settings, LaptopMinimal } from 'lucide-vue-next';
+import { ChartColumnBig, Settings, LaptopMinimal } from '@lucide/vue';
 </script>
 
 <template>

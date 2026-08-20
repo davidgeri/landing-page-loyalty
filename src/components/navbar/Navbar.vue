@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router';
-import { Phone, Mail, MapPin } from 'lucide-vue-next';
+import { Phone, Mail, MapPin } from '@lucide/vue';
 import NavMobile from './NavMobile.vue';
 import { navmenu } from '../../store/navmenu.ts';
 

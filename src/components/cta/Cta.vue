@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-import { MoveRight } from "lucide-vue-next"
+import { MoveRight } from "@lucide/vue"
 
 import { RouterLink } from "vue-router"
 

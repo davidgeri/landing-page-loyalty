@@ -37,26 +37,34 @@ const flow = [
 </script>
 
 <template>
-    <main class="flex flex-col md:flex-row gap-10 justify-center mt-20">
-        <section class="flex flex-col gap-5">
-           <span class="items-center flex">
-            <OutlinePill :text="data.outlinepill" class-pil="border-blue-500 text-blue-500" />
-           </span>
-            <h1 class="text-4xl font-semibold md:w-xl">{{ data.title }}</h1>
-            <p class="w-xl">{{ data.desk }}</p>
-        </section>
+    <section class="mt-20 grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16" aria-labelledby="integration-title">
+        <header class="flex max-w-xl flex-col gap-5">
+                <div class="flex justify-start">
+                    <OutlinePill :text="data.outlinepill" class-pil="border-blue-500 text-blue-500" />
+                </div>
+            <h2 id="integration-title" class="text-3xl font-semibold leading-tight sm:text-4xl">
+                {{ data.title }}
+            </h2>
+            <p class="text-base leading-relaxed text-stone-600 sm:text-lg">{{ data.desk }}</p>
+        </header>
 
-        <section class="w-105">
-            <div v-for="(item, index) in flow" :key="index" v-tooltip="item.flow">
-                <div :class="item.class">
+        <ol class="mx-auto w-full max-w-md list-none p-0" aria-label="Alur integrasi produk">
+            <li
+                v-for="(item, index) in flow"
+                :key="index"
+                v-tooltip="item.flow"
+                class="flex flex-col items-center"
+            >
+                <div :class="['w-full px-4 sm:px-6', item.class]">
                     {{ item.text }}
                 </div>
 
                 <div
                     v-if="index < flow.length - 1"
-                    class="w-0.5 h-6 bg-blue-600 mx-auto"
+                    class="h-6 w-0.5 bg-blue-600"
+                    aria-hidden="true"
                 ></div>
-            </div>
-        </section>
-    </main>
+            </li>
+        </ol>
+    </section>
 </template>

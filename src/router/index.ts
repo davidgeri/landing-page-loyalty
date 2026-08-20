@@ -1,4 +1,4 @@
-import {createRouter, createWebHistory} from "vue-router"
+import { createRouter, createWebHistory } from "vue-router";
 
 // TODO: Pages
 import NotFound from "../views/NotFound.vue"
@@ -50,6 +50,6 @@ const routes = [
 ]
 
 export const router = createRouter({
-    history: createWebHistory(),
-    routes
-})
+  history: createWebHistory(),
+  routes,
+});

@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import { Equal, X, Phone, Mail } from 'lucide-vue-next'
-import { RouterLink } from 'vue-router'
+import { onBeforeUnmount, ref, watch } from 'vue'
+import { Equal, X, Phone, Mail } from '@lucide/vue'
+import { RouterLink, useRoute } from 'vue-router'
 import { navmenu } from '../../store/navmenu'
 
 const {menu} = navmenu()
@@ -12,11 +12,26 @@ const current_contact = {
 }
 
 const isOpen = ref(false)
-const handleMenu = () => {
-    isOpen.value = !isOpen.value
-    document.body.style.overflow = isOpen.value ? 'hidden' : ''
+const route = useRoute()
+
+const closeMenu = () => {
+  isOpen.value = false
+  document.body.style.overflow = ''
 }
 
+const handleMenu = () => {
+  if (isOpen.value) {
+    closeMenu()
+    return
+  }
+
+  isOpen.value = true
+  document.body.style.overflow = 'hidden'
+}
+
+// Pastikan scroll dikembalikan meskipun navigasi dipicu dari link mana pun.
+watch(() => route.fullPath, closeMenu)
+onBeforeUnmount(closeMenu)
 
 </script>
 
@@ -53,7 +68,7 @@ const handleMenu = () => {
             v-for="(item, index) in menu" 
             :key="index"
             :to="item.navto"
-            @click="isOpen = false"
+            @click="closeMenu"
             class="py-4 px-6 hover:bg-gray-100 duration-300"
           >
             {{ item.name }}
@@ -78,6 +93,7 @@ const handleMenu = () => {
 
           <RouterLink 
             to="/request-demo" 
+            @click="closeMenu"
             class="w-full text-center bg-blue-600 text-white font-semibold py-3 rounded-lg mt-2 cursor-pointer active:scale-95 active:bg-blue-500  transition-transform inline-block
             "
           >

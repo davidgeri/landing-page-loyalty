@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
@@ -62,7 +62,7 @@ const products = [
   }
 ]
 
-const goToDetail = (slug) => {
+const goToDetail = (slug: string) => {
   router.push(`/product/${slug}`)
 }
 </script>

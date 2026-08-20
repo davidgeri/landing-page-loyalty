@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import OutlinePill from '../../components/outlinepill/OutlinePill.vue';
-import { ArrowRight, ArrowLeft } from 'lucide-vue-next';
+import { ArrowRight, ArrowLeft } from '@lucide/vue';
 import Stepper from 'primevue/stepper';
 import StepList from 'primevue/steplist';
 import StepPanels from 'primevue/steppanels';

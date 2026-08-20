@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ShieldCheck, TrendingUp, TabletSmartphone } from 'lucide-vue-next'
+import { ShieldCheck, TrendingUp, TabletSmartphone } from '@lucide/vue'
 
 const benefits = [
   {
