@@ -19,7 +19,7 @@ const props = defineProps<Props>()
     <ul class="grid list-none grid-cols-1 gap-5 p-0 md:grid-cols-3" aria-label="Testimoni klien">
         <li
             v-for="(item, index) in props.clientsay" :key="index"
-            class="h-full rounded-lg border p-5 text-center"
+            class="h-full rounded-lg border p-5 text-center hover:-translate-y-1 duration-200 hover:shadow-xl"
         >
             <article class="flex h-full flex-col items-center">
                 <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-stone-900">

@@ -47,9 +47,6 @@ const LeftSideHero = {
   importantTitle : "Operasional Hotel",
   desk : "Pilih solusi yang sesuai dengan kebutuhan hotel, mulai dari reservasi langsung, pengelolaan channel, hingga program loyalitas tamu."
 }
-
-
-
 </script>
 
 <template>
