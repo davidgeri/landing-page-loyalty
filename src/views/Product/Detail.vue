@@ -57,22 +57,6 @@ const products = [
     image: '/assets/loyalty-ui.png',
     detailDesc: 'Inventory adalah aplikasi komprehensif berbasis cloud yang dirancang sebagai bagian dari Cakrasoft Cloud Hotel untuk mengefisienkan pengelolaan inventaris dan aset tetap bagi industri perhotelan, termasuk hotel, penginapan, restoran, kafe, serta bisnis terkait pariwisata lainnya. Aplikasi ini dirancang agar dapat beroperasi secara lancar, baik pada komputer yang berdiri sendiri (standalone) maupun dalam lingkungan jaringan, sehingga menawarkan fleksibilitas dan skalabilitas untuk memenuhi kebutuhan berbagai jenis organisasi.',
     advantages: ['User Friendly Interface', 'Solusi pemecahan masalah tingkat lanjut untuk industri perhotelan', 'Tingkatkan pendapatan melalui metode layanan yang cepat dan mudah.']
-  },
-  {
-    slug: 'channel-manager',
-    title: 'Channel Manager',
-    icon: '/icon/c-manajer.png',
-    image: '/assets/c-manajer-ui.png',
-    detailDesc: 'Channel manager yang andal memusatkan kendali, memungkinkan bisnis untuk mengelola serta memperbarui inventaris, harga, dan ketersediaan di berbagai saluran distribusi secara real-time. Sistem ini menawarkan integrasi yang mulus dengan beragam agen perjalanan daring, sistem manajemen properti, dan perangkat manajemen hubungan pelanggan (CRM). Fitur otomatisasi mengurangi kesalahan manual dan menghemat waktu, sementara analitik canggih serta penetapan harga dinamis membantu memaksimalkan pendapatan dan meningkatkan pengambilan keputusan. Visibilitas yang lebih baik dan manajemen pengguna menjamin akurasi informasi serta efisiensi operasional, yang pada akhirnya meningkatkan pengalaman pelanggan.',
-    advantages: ['User Friendly Interface', 'Solusi pemecahan masalah tingkat lanjut untuk industri perhotelan', 'Tingkatkan pendapatan melalui metode layanan yang cepat dan mudah.']
-  },
-  {
-    slug: 'booking-engine',
-    title: 'Booking Engine',
-    icon: '/icon/b-engine.png',
-    image: '/assets/b-engine-ui.png',
-    detailDesc: 'Cakrahub Booking Engine terintegrasi dengan situs web hotel untuk memfasilitasi pemesanan online secara langsung. Sistem ini terhubung dengan Property Management System (PMS), sehingga memastikan setiap pemesanan tercatat secara otomatis dan real-time.',
-    advantages: ['User Friendly Interface', 'Solusi pemecahan masalah tingkat lanjut untuk industri perhotelan', 'Tingkatkan pendapatan melalui metode layanan yang cepat dan mudah.']
   }
 ]
 
