@@ -1,8 +1,58 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
-import { ArrowRight, Award, BadgeCheck, Check, Crown } from '@lucide/vue'
+import { ArrowRight, Award, BadgeCheck, Check, Crown, Gift, Handshake } from '@lucide/vue'
+import CardLoyalty from '../../components/cardLoyalty/CardLoyalty.vue'
 
 const router = useRouter()
+
+const FloatText = [
+    {
+        ico : Handshake,
+        text : "Loyalitas"
+    },
+    {
+        ico : Gift,
+        text : "Reward"
+    },
+    {
+        ico : Award,
+        text : "Membership"
+    },
+]
+
+const Required = [
+    {
+        title : "Point Required",
+        require : "280 + pts"
+    },
+    {
+        title : "Bonus Earned",
+        require : "+20.00%"
+    }
+]
+
+const Benefit = [
+    {
+        text : "20% Bonus Points",
+    },
+    {
+        text : "Free Railway Station Transfer",
+    },
+    {
+        text : "Vip Lounge Accsess",
+    },
+    {
+        text : "Dedicated Manager",
+    },
+]
+
+const Card = {
+    title : "Your Tier",
+    tier : "Platinum",
+    desk : "Top-tier membership with maximum benefits and privilages",
+    required : Required,
+    benefit : Benefit
+}
 
 const products = [
   {
@@ -70,6 +120,25 @@ const products = [
   }
 ]
 
+const TierClass = {
+    bg : "border-[#9486BC] bg-[#cfc0fc43]",
+    icon : "text-[#E5DDFF]"
+}
+
+const RequiredClass = {
+    title : "text-[#909090] font-medium",
+    require : "text-[#6A6A6A] font-semibold"
+}
+
+const CardClass = {
+    header : "bg-linear-to-r from-[#2D1B69] to-[#3D2680]",
+    tier : Tier,
+    desk : "text-[#C7C7CC]",
+    bgico : "border-[#AFA9FC] bg-[#564097]",
+    required : Required
+}
+
+
 const goToDetail = (slug: string) => {
   router.push(`/product/${slug}`)
 }
@@ -128,32 +197,7 @@ const goToDetail = (slug: string) => {
             class="w-full max-w-sm overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm"
             aria-label="Preview membership Cakra Royalty"
           >
-            <div class="bg-gradient-to-r from-[#38207d] to-[#54329c] px-4 py-3 text-white sm:px-5">
-              <div class="flex items-center justify-between gap-3">
-                <div class="flex items-center gap-2.5">
-                  <span class="flex h-8 w-8 items-center justify-center rounded-md border border-white/25 bg-white/10">
-                    <Crown class="h-4 w-4" />
-                  </span>
-                  <h4 class="text-lg font-bold">Platinum</h4>
-                </div>
-                <span class="inline-flex items-center gap-1 rounded-full border border-white/20 bg-white/10 px-2.5 py-1 text-[10px] font-medium">
-                  <BadgeCheck class="h-3 w-3" /> Your Tier
-                </span>
-              </div>
-              <p class="mt-2 text-[10px] text-white/75">Top-tier membership with maximum benefits and privileges</p>
-            </div>
-            <div class="p-4 sm:p-5">
-              <div class="space-y-2 text-xs text-slate-500">
-                <div class="flex justify-between gap-4"><span>Point Required</span><strong class="text-slate-700">280 + pts</strong></div>
-                <div class="flex justify-between gap-4"><span>Bonus Earn</span><strong class="text-slate-700">+20.00%</strong></div>
-              </div>
-              <div class="my-3 border-t border-slate-200"></div>
-              <div class="flex flex-wrap gap-1.5">
-                <span v-for="benefit in ['20% Bonus Points', 'Free Railway Station Transfer', 'VIP Lounge Access', 'Dedicated Manager']" :key="benefit" class="inline-flex items-center gap-1 rounded-full bg-violet-50 px-2 py-1 text-[9px] font-medium text-violet-700">
-                  <Check class="h-2.5 w-2.5" /> {{ benefit }}
-                </span>
-              </div>
-            </div>
+           <CardLoyalty  />
           </div>
           <img
             v-else
