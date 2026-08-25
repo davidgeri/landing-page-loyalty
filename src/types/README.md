@@ -1,1 +1,0 @@
-# untuk menyimpan seluruh `type format` yang di perlukan beberapa componen

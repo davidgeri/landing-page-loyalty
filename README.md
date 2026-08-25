@@ -1,5 +1,9 @@
 # Cakrasoft Add-ons Company Profile
 
+<p align="center">
+  <img src="public/images/Logo-cakra-minimal.png" alt="Logo Cakrasoft" width="120" />
+</p>
+
 Website company profile untuk **Cakrasoft Add-ons**, dibangun sebagai aplikasi frontend modern yang responsif dan mudah dikembangkan.
 
 ## Daftar Isi
@@ -81,20 +85,21 @@ Pastikan perangkat pengembangan telah memiliki:
 
 Aplikasi menggunakan [Vue Router](https://router.vuejs.org/) dengan mode history browser. Konfigurasi rute berada di [`src/router/index.ts`](src/router/index.ts), sedangkan setiap halaman disimpan pada direktori [`src/views`](src/views).
 
-```text
-Start (/)
-└── Home
-    ├── About (/about)
-    ├── Products (/product)
-    │   ├── Detail Channel Manager (/product/channel-manager)
-    │   ├── Detail Booking Engine (/product/booking-engine)
-    │   └── Detail Cakra Loyalty (/product/cakra-loyalty)
-    ├── FAQ (/faq)
-    ├── Contact (/contact)
-    └── Request Demo (/request-demo)
+```mermaid
+flowchart TD
+    Start["Start (/)"] --> Home["Home"]
 
-404 Page (/:pathMatch(.*)*)
-└── Halaman terpisah untuk rute yang tidak ditemukan
+    Home --> About["About<br/>/about"]
+    Home --> Products["Products<br/>/product"]
+    Home --> FAQ["FAQ<br/>/faq"]
+    Home --> Contact["Contact<br/>/contact"]
+    Home --> RequestDemo["Request Demo<br/>/request-demo"]
+
+    Products --> ChannelManager["Detail Channel Manager<br/>/product/channel-manager"]
+    Products --> BookingEngine["Detail Booking Engine<br/>/product/booking-engine"]
+    Products --> CakraLoyalty["Detail Cakra Loyalty<br/>/product/cakra-loyalty"]
+
+    NotFound["404 Page<br/>/:pathMatch(.*)*"]
 ```
 
 | Halaman | Rute | Tujuan |

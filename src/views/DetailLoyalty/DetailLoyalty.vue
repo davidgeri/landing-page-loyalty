@@ -2,6 +2,7 @@
 import Navbar from '../../components/navbar/Navbar.vue';
 import FooterComponent from '../../components/footer/FooterComponent.vue';
 import HeroLoyalty from './HeroLoyalty.vue';
+import ClientProblemLoyalty from './ClientProblemLoyalty.vue';
 
 
 import { Handshake, Gift, Award, Crown, Check} from '@lucide/vue';
@@ -76,6 +77,7 @@ const LeftSide = {
     <Navbar />
     <main class="flex flex-col pt-20">
         <HeroLoyalty :Leftside="LeftSide" :RightSide="RightSide" />
+        <ClientProblemLoyalty />
     </main>
     <FooterComponent />
 </template>
