@@ -74,8 +74,8 @@ const LeftSide = {
 
 <template>
     <Navbar />
-    <main class="w-full overflow-x-clip">
-        <HeroLoyalty :-leftside="LeftSide" :-right-side="RightSide" />
+    <main class="flex flex-col pt-20">
+        <HeroLoyalty :Leftside="LeftSide" :RightSide="RightSide" />
     </main>
     <FooterComponent />
 </template>
