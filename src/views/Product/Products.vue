@@ -1,24 +1,9 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
-import { ArrowRight, Award, BadgeCheck, Check, Crown, Gift, Handshake } from '@lucide/vue'
+import { ArrowRight, Award} from '@lucide/vue'
 import CardLoyalty from '../../components/cardLoyalty/CardLoyalty.vue'
 
 const router = useRouter()
-
-const FloatText = [
-    {
-        ico : Handshake,
-        text : "Loyalitas"
-    },
-    {
-        ico : Gift,
-        text : "Reward"
-    },
-    {
-        ico : Award,
-        text : "Membership"
-    },
-]
 
 const Required = [
     {
@@ -45,6 +30,24 @@ const Benefit = [
         text : "Dedicated Manager",
     },
 ]
+
+const tierStyle = {
+    bg: "border-[#9486BC] bg-[#cfc0fc43]",
+    icon: "text-[#E5DDFF]"
+}
+
+const requirementStyle = {
+    title: "text-[#909090] font-medium",
+    require: "text-[#6A6A6A] font-semibold"
+}
+
+const classes = {
+    header: "bg-linear-to-r from-[#2D1B69] to-[#3D2680]",
+    tier: tierStyle,
+    desk: "text-[#C7C7CC]",
+    bgico: "border-[#AFA9FC] bg-[#564097]",
+    required: requirementStyle
+}
 
 const Card = {
     title : "Your Tier",
@@ -120,25 +123,6 @@ const products = [
   }
 ]
 
-const TierClass = {
-    bg : "border-[#9486BC] bg-[#cfc0fc43]",
-    icon : "text-[#E5DDFF]"
-}
-
-const RequiredClass = {
-    title : "text-[#909090] font-medium",
-    require : "text-[#6A6A6A] font-semibold"
-}
-
-const CardClass = {
-    header : "bg-linear-to-r from-[#2D1B69] to-[#3D2680]",
-    tier : Tier,
-    desk : "text-[#C7C7CC]",
-    bgico : "border-[#AFA9FC] bg-[#564097]",
-    required : Required
-}
-
-
 const goToDetail = (slug: string) => {
   router.push(`/product/${slug}`)
 }
@@ -197,7 +181,7 @@ const goToDetail = (slug: string) => {
             class="w-full max-w-sm overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm"
             aria-label="Preview membership Cakra Royalty"
           >
-           <CardLoyalty  />
+           <CardLoyalty :tier="Card.tier" :title="Card.title" :desk="Card.desk" :required="Required" :benefit="Benefit" :class-card="classes"  />
           </div>
           <img
             v-else
