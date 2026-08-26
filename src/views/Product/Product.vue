@@ -44,7 +44,7 @@ const RightsideHero = [
 const LeftSideHero = {
   heading : "Solusi Cloud Terbaik",
   title : "Produk Add-ons untuk Mendukung Pemasaran dan",
-  importantTitle : "Operasional Hotel",
+  importantTitle : " Operasional Hotel",
   desk : "Pilih solusi yang sesuai dengan kebutuhan hotel, mulai dari reservasi langsung, pengelolaan channel, hingga program loyalitas tamu."
 }
 </script>
@@ -53,21 +53,22 @@ const LeftSideHero = {
   <div class="min-h-screen bg-white font-sans text-gray-800 selection:bg-blue-100">
     <Navbar />
 
-    <section class="pt-24">
+    <main class="pt-24">
       <Hero 
         :-leftside="LeftSideHero"
         :-rightside="RightsideHero"
       />
       <Product />
       <Benefit />
-    <div class="-mb-36">
-      <Cta 
-        :view="views" 
-        :button="ctaButton"
+      
+      <div class="-mb-36">
+        <Cta 
+          :view="views" 
+          :button="ctaButton"
         />
-    </div>
-    <FooterComponent />
-    </section>
-
+      </div>
+      
+      <FooterComponent />
+    </main>
   </div>
 </template>

@@ -109,7 +109,10 @@ onMounted(() => {
             <span class="text-gray-700">{{ adv }}</span>
           </li>
         </ul>
-        <button class="px-8 py-3.5 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors shadow-md w-full sm:w-auto">
+        <button 
+          @click="$router.push('/request-demo')"
+          class="px-8 py-3.5 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors shadow-md w-full sm:w-auto"
+        >
           Request Demo Sekarang
         </button>
       </div>

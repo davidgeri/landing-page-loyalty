@@ -71,7 +71,6 @@ const data = [
         <h1 class="text-4xl md:text-5xl font-bold text-stone-800 leading-tight mb-6">
           Solusi Teknologi 
           <span class="inline-block border-dashed border-2 border-stone-400 px-3 py-1 mx-2 align-middle">
-            <span class="block text-xs font-semibold text-stone-600 mb-1">p-title</span>
             <span class="block text-2xl font-bold text-stone-900 leading-tight">untuk</span>
           </span>
           <br />
