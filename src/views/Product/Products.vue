@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
-import { ArrowRight, Award} from '@lucide/vue'
+import { ArrowRight, Award } from '@lucide/vue'
 import CardLoyalty from '../../components/cardLoyalty/CardLoyalty.vue'
 
 const router = useRouter()
@@ -148,7 +148,7 @@ const goToDetail = (slug: string) => {
           'border border-gray-200 rounded-2xl p-6 bg-white hover:shadow-lg transition-shadow',
           item.isFullWidth ? 'md:col-span-2 flex flex-col md:flex-row gap-8 mt-4' : 'flex flex-col sm:flex-row gap-6'
         ]"
-      >  
+      >   
         <div :class="['flex flex-col items-start', item.isFullWidth ? 'flex-1 justify-center' : 'flex-1 justify-between']">
           <div>
             <div class="flex items-center gap-4 mb-4">
@@ -160,9 +160,9 @@ const goToDetail = (slug: string) => {
                 <h3 :class="['font-bold text-gray-800', item.isFullWidth ? 'text-2xl' : 'text-xl']">
                   {{ item.title }}
                 </h3>
-                <button @click="goToDetail(item.slug)" class="text-blue-600 text-sm hover:underline font-medium mt-1 flex gap-2 items-center group">
-                  <h1>Detail Product</h1>
-                  <ArrowRight class="w-5 h-5 group-hover:translate-x-1 duration-150 " />
+                <button @click="goToDetail(item.slug)" class="text-blue-600 text-sm hover:underline font-medium mt-1 flex gap-2 items-center group cursor-pointer">
+                  <span>Detail Product</span>
+                  <ArrowRight class="w-5 h-5 group-hover:translate-x-1 duration-150" />
                 </button>
               </div>
             </div>
@@ -170,7 +170,10 @@ const goToDetail = (slug: string) => {
               {{ item.desc }}
             </p>
           </div>
-          <button :class="['bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700 transition-colors text-sm', item.isFullWidth ? 'px-6 py-2.5' : 'px-5 py-2']">
+          <button 
+            @click="$router.push('/request-demo')"
+            :class="['bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700 transition-colors text-sm', item.isFullWidth ? 'px-6 py-2.5' : 'px-5 py-2']"
+          >
             Request Demo
           </button>
         </div>
