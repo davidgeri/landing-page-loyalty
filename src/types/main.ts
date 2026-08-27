@@ -14,17 +14,15 @@ interface TierStyle {
     icon: string
 }
 
-interface RequirementStyle {
-    title: string
-    require: string
-}
-
 interface ClassStyles {
     header: string
     tier: TierStyle
     desk: string
     bgico: string
-    required: RequirementStyle
+    required: {
+        title : string ,
+        require : string 
+    }
 }
 
 
@@ -35,4 +33,19 @@ export interface PropsLoyaltyCard {
     required: Requirement[]
     benefit: Benefit[]
     classCard? : ClassStyles  //Buka kalo udah mau di pake ini supaya jalan aja buildn ya dulu
+}
+
+// * Solution Loyalty 
+
+export interface PropsSolutionLoyalty  {
+    Title : string 
+    Desk : string
+}
+
+// * Feature Loyalty
+
+export interface FeatureLoyalty {
+    Title : string 
+    Desk : string 
+    Feature : string[]
 }

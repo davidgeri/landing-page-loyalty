@@ -65,20 +65,20 @@ const props = defineProps<Props>()
 </script>
 
 <template>
-    <main class="mx-auto flex max-w-7xl flex-col items-center gap-10 px-4 py-16 sm:px-6 lg:flex-row lg:px-8">
-        <section class="flex max-w-xl flex-1 flex-col gap-4">
+    <section class="mx-auto flex max-w-7xl flex-col items-center gap-12 px-4 py-16 sm:px-6 md:py-24 lg:flex-row lg:gap-16 lg:px-8" aria-labelledby="loyalty-heading">
+        <div class="flex max-w-xl flex-1 flex-col gap-5">
             <div class="flex justify-start items-center">
                 <span class="flex items-center justify-center gap-3 border p-1 rounded-lg px-8">
-                    <p class="w-2 h-2 rounded-full bg-blue-500"></p>
-                    <p class="font-semibold text-blue-500">{{ props.Leftside.heading }}</p>
+                    <span class="h-2 w-2 rounded-full bg-blue-500" aria-hidden="true"></span>
+                    <span class="font-semibold text-blue-500">{{ props.Leftside.heading }}</span>
                 </span>
             </div>
-            <h1 class="text-4xl font-semibold leading-tight md:text-5xl">Bangun <span class="text-blue-500">Loyalitas
+            <h1 id="loyalty-heading" class="text-4xl font-semibold leading-tight text-slate-900 md:text-5xl">Bangun <span class="text-blue-500">Loyalitas
                     Tamu </span> Melalui Membership, Poin, dan Reward</h1>
-            <p class="leading-relaxed text-slate-600">{{ props.Leftside.desk }}</p>
-        </section>
+            <p class="max-w-lg leading-relaxed text-slate-600">{{ props.Leftside.desk }}</p>
+        </div>
 
-        <section class="relative isolate mx-auto w-full max-w-md px-3 pt-12 pb-14 sm:px-5 sm:pt-14 lg:mx-0 lg:flex-1">
+        <aside class="relative isolate mx-auto w-full max-w-md px-3 pb-14 pt-12 sm:px-5 sm:pt-14 lg:mx-0 lg:flex-1" aria-label="Contoh kartu keanggotaan loyalitas">
 
             <div
                 v-for="(item, index) in FloatText"
@@ -104,6 +104,6 @@ const props = defineProps<Props>()
                 />
             </div>
 
-        </section>
-    </main>
+        </aside>
+    </section>
 </template>

@@ -24,49 +24,49 @@ const props = defineProps<PropsLoyaltyCard>()
 </script>
 
 <template>
-    <section class="w-full">
-        <div :class="classes.header" class="border rounded-2xl rounded-b-none p-4 sm:p-5">
+    <article class="w-full overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-lg shadow-slate-200/50">
+        <header :class="classes.header" class="p-4 sm:p-5">
             <div class="flex flex-col gap-3">
                 <div class="flex items-center justify-between gap-3 sm:gap-4">
                     <span class="flex min-w-0 items-center gap-3 sm:gap-5">
                         <span :class="classes.bgico" class="shrink-0 border rounded-lg p-2">
                             <Crown class="h-6 w-6 text-white sm:h-7 sm:w-7" />
                         </span>
-                        <h1 class="truncate text-2xl font-bold text-white">{{ props.tier }}</h1>
+                        <h2 class="truncate text-2xl font-bold text-white">{{ props.tier }}</h2>
                     </span>
 
                     <span class="flex shrink-0 justify-end">
                         <span :class="classes.tier.bg" class="rounded-2xl border p-1 px-3 sm:px-5">
                             <span class="flex items-center gap-1.5 sm:gap-2">
                                 <BadgeCheck :class="classes.tier.icon" class="h-4 w-4 sm:h-5 sm:w-5" />
-                                <h1 class="text-sm font-semibold text-white sm:text-base">{{ props.title }}</h1>
+                                <span class="text-sm font-semibold text-white sm:text-base">{{ props.title }}</span>
                             </span>
                         </span>
                     </span>
                 </div>
-                <h1 class="text-[13px]" :class="classes.desk">{{ props.desk }}</h1>
+                <p class="text-[13px]" :class="classes.desk">{{ props.desk }}</p>
             </div>
-        </div>
+        </header>
 
-        <div class="border rounded-2xl rounded-t-none border-t-0 p-4 sm:p-5">
-            <div class="flex flex-col gap-2 border-b pb-4 sm:pb-5">
-                <span class="flex justify-between" v-for="(item, index) in props.required" :key="index">
-                    <h1 :class="classes.required.title">{{ item.title }}</h1>
-                    <h1 :class="classes.required.require">{{ item.require }}</h1>
-                </span>
-            </div>
+        <div class="p-4 sm:p-5">
+            <dl class="flex flex-col gap-2 border-b pb-4 sm:pb-5">
+                <div class="flex justify-between gap-4" v-for="item in props.required" :key="item.title">
+                    <dt :class="classes.required.title">{{ item.title }}</dt>
+                    <dd :class="classes.required.require">{{ item.require }}</dd>
+                </div>
+            </dl>
 
-            <div class="grid grid-cols-2 gap-1.5 pt-3 sm:gap-2">
-                <span
+            <ul class="grid grid-cols-1 gap-1.5 pt-3 sm:grid-cols-2 sm:gap-2" aria-label="Manfaat tier membership">
+                <li
                     :class="classes.tier.bg"
                     class="flex min-w-0 items-center gap-2 border rounded-2xl p-1 px-3"
-                    v-for="(item, index) in props.benefit"
-                    :key="index"
+                    v-for="item in props.benefit"
+                    :key="item.text"
                 >
-                    <Check class="h-3 w-3 shrink-0" />
+                    <Check class="h-3 w-3 shrink-0" aria-hidden="true" />
                     <p class="break-words text-[11px] sm:text-[12px]">{{ item.text }}</p>
-                </span>
-            </div>
+                </li>
+            </ul>
         </div>
-    </section>
+    </article>
 </template>

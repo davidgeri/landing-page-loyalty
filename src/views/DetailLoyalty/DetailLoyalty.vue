@@ -2,82 +2,57 @@
 import Navbar from '../../components/navbar/Navbar.vue';
 import FooterComponent from '../../components/footer/FooterComponent.vue';
 import HeroLoyalty from './HeroLoyalty.vue';
+
 import ClientProblemLoyalty from './ClientProblemLoyalty.vue';
-
-
-import { Handshake, Gift, Award, Crown, Check} from '@lucide/vue';
-
-const FloatText = [
-    {
-        ico : Handshake,
-        text : "Loyalitas"
-    },
-    {
-        ico : Gift,
-        text : "Reward"
-    },
-    {
-        ico : Award,
-        text : "Membership"
-    },
-]
-
-const Point = {
-    name : "Point Required",
-    amount : "280 + pts",
-}
-
-const Bonus = {
-    name : "Bonus Earn",
-    amount : "+20.00%",
-}
-
-const Benefit = [
-    {
-        ico : Check,
-        benefit : "20% Bonus Points",
-    },
-    {
-        ico : Check,
-        benefit : "Free Railway Station Transfer",
-    },
-    {
-        ico : Check,
-        benefit : "Vip Lounge Accsess",
-    },
-    {
-        ico : Check,
-        benefit : "Dedicated Manager",
-    },
-]
-
-const Card = {
-    icon : Crown,
-    title : "Platinum",
-    tag : "Your Tier",
-    subTitle : "Top-tier membership with maximum benefits and privilages",
-    point : Point,
-    bonus : Bonus,
-    Benefits : Benefit
-}
-
-const RightSide = {
-    floatText : FloatText,
-    Card : Card
-}
+import SolutionLoyalty from './SolutionLoyalty.vue';
+import FeatureLoyalty from './FeatureLoyalty.vue';
+import TierFeature from './TierFeature.vue';
 
 const LeftSide = {
-    heading : "Loyalty is Priority",
-    desk : "Cakra Loyalty membantu hotel mengelola member, tier, poin, promosi, dan reward melalui sistem yang terintegrasi."
+    heading: "Loyalty is Priority",
+    desk: "Cakra Loyalty membantu hotel mengelola member, tier, poin, promosi, dan reward melalui sistem yang terintegrasi."
+}
+
+const SolutionDat = {
+    Title : "Penjelasan Solusi",
+    Desk : "Cakra Loyalty membantu hotel memberikan pengalaman yang lebih personal serta membangun hubungan jangka panjang dengan tamu melalui program loyalitas."
 }
 
 </script>
 
 <template>
     <Navbar />
-    <main class="flex flex-col pt-20">
-        <HeroLoyalty :Leftside="LeftSide" :RightSide="RightSide" />
+    <main class="overflow-hidden pt-20 justify-center flex flex-col">
+        <HeroLoyalty :Leftside="LeftSide" />
         <ClientProblemLoyalty />
+        <div class="w-full" v-animateonscroll="{ enterClass: 'animate__animated animate__fadeInUp', threshold: 0.5 }">
+            <SolutionLoyalty :Title="SolutionDat.Title" :Desk="SolutionDat.Desk" />
+        </div>
+        <FeatureLoyalty />
+        <TierFeature />
     </main>
     <FooterComponent />
 </template>
+
+<style scoped>
+.animate__animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+.animate__fadeInUp {
+    animation-name: fadeInUp;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+</style>
