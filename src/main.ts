@@ -7,6 +7,8 @@ import PrimeVue from "primevue/config"
 import Aura from '@primevue/themes/aura'
 import Tooltip from 'primevue/tooltip'
 import { definePreset } from '@primevue/themes'
+import AnimateOnScroll from 'primevue/animateonscroll';
+
 
 const CakraPreset = definePreset(Aura, {
     semantic: {
@@ -37,5 +39,6 @@ app.use(PrimeVue, {
         }
     }
 })
+app.directive('animateonscroll', AnimateOnScroll);
 app.use(router)
 app.mount('#app')

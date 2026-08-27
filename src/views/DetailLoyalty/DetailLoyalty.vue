@@ -2,82 +2,90 @@
 import Navbar from '../../components/navbar/Navbar.vue';
 import FooterComponent from '../../components/footer/FooterComponent.vue';
 import HeroLoyalty from './HeroLoyalty.vue';
+import {Gift, RotateCcwClock,Clock4, Plus, Minus } from "@lucide/vue"
+
 import ClientProblemLoyalty from './ClientProblemLoyalty.vue';
-
-
-import { Handshake, Gift, Award, Crown, Check} from '@lucide/vue';
-
-const FloatText = [
-    {
-        ico : Handshake,
-        text : "Loyalitas"
-    },
-    {
-        ico : Gift,
-        text : "Reward"
-    },
-    {
-        ico : Award,
-        text : "Membership"
-    },
-]
-
-const Point = {
-    name : "Point Required",
-    amount : "280 + pts",
-}
-
-const Bonus = {
-    name : "Bonus Earn",
-    amount : "+20.00%",
-}
-
-const Benefit = [
-    {
-        ico : Check,
-        benefit : "20% Bonus Points",
-    },
-    {
-        ico : Check,
-        benefit : "Free Railway Station Transfer",
-    },
-    {
-        ico : Check,
-        benefit : "Vip Lounge Accsess",
-    },
-    {
-        ico : Check,
-        benefit : "Dedicated Manager",
-    },
-]
-
-const Card = {
-    icon : Crown,
-    title : "Platinum",
-    tag : "Your Tier",
-    subTitle : "Top-tier membership with maximum benefits and privilages",
-    point : Point,
-    bonus : Bonus,
-    Benefits : Benefit
-}
-
-const RightSide = {
-    floatText : FloatText,
-    Card : Card
-}
+import SolutionLoyalty from './SolutionLoyalty.vue';
+import FeatureLoyalty from './FeatureLoyalty.vue';
+import TierFeature from './TierFeature.vue';
+import PoinFeature from './PoinFeature.vue';
 
 const LeftSide = {
-    heading : "Loyalty is Priority",
-    desk : "Cakra Loyalty membantu hotel mengelola member, tier, poin, promosi, dan reward melalui sistem yang terintegrasi."
+    heading: "Loyalty is Priority",
+    desk: "Cakra Loyalty membantu hotel mengelola member, tier, poin, promosi, dan reward melalui sistem yang terintegrasi."
 }
 
+const SolutionDat = {
+    Title : "Penjelasan Solusi",
+    Desk : "Cakra Loyalty membantu hotel memberikan pengalaman yang lebih personal serta membangun hubungan jangka panjang dengan tamu melalui program loyalitas."
+}
+
+const PoinFeatureDatFirst = [
+    {
+        icon : Gift,
+        title : "Bonus Poin",
+        desk : "Poin tambahan dari promo, ulang tahun, atau event khusus"
+    },
+    {
+        icon : RotateCcwClock,
+        title : "Riwayat Poin",
+        desk : "semua pergerakan poin tercatat dan bisa di telusuri member"
+    },
+    {
+        icon : Clock4,
+        title : "Masa Berlaku Poin",
+        desk : "Poin memiliki priode aktif sesuai kebijakan hotel"
+    },
+]
+
+const PoinFeatureDatSecond = [
+    {
+        icon : Plus,
+        title : "Penambahan Poin",
+        desk :"Poin bertambah otomatis dari aktivitas member"
+    },
+    {
+        icon : Minus,
+        title : "Penukaran Poin",
+        desk :"Poin berkurang saat di tukar reward atau kadaluarsa"
+    },
+    ]
 </script>
 
 <template>
     <Navbar />
-    <main class="flex flex-col pt-20">
-        <HeroLoyalty :Leftside="LeftSide" :RightSide="RightSide" />
+    <main class="overflow-hidden pt-20 justify-center flex flex-col">
+        <HeroLoyalty :Leftside="LeftSide" />
         <ClientProblemLoyalty />
+        <div class="w-full" v-animateonscroll="{ enterClass: 'animate__animated animate__fadeInUp', threshold: 0.5 }">
+            <SolutionLoyalty :Title="SolutionDat.Title" :Desk="SolutionDat.Desk" />
+        </div>
+        <FeatureLoyalty />
+        <TierFeature />
+        <PoinFeature :cardFirst="PoinFeatureDatFirst" :cardSecond="PoinFeatureDatSecond"  />
     </main>
     <FooterComponent />
 </template>
+
+<style scoped>
+.animate__animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+.animate__fadeInUp {
+    animation-name: fadeInUp;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+</style>
