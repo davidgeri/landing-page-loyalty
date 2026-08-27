@@ -2,11 +2,13 @@
 import Navbar from '../../components/navbar/Navbar.vue';
 import FooterComponent from '../../components/footer/FooterComponent.vue';
 import HeroLoyalty from './HeroLoyalty.vue';
+import {Gift, RotateCcwClock,Clock4, Plus, Minus } from "@lucide/vue"
 
 import ClientProblemLoyalty from './ClientProblemLoyalty.vue';
 import SolutionLoyalty from './SolutionLoyalty.vue';
 import FeatureLoyalty from './FeatureLoyalty.vue';
 import TierFeature from './TierFeature.vue';
+import PoinFeature from './PoinFeature.vue';
 
 const LeftSide = {
     heading: "Loyalty is Priority",
@@ -18,6 +20,36 @@ const SolutionDat = {
     Desk : "Cakra Loyalty membantu hotel memberikan pengalaman yang lebih personal serta membangun hubungan jangka panjang dengan tamu melalui program loyalitas."
 }
 
+const PoinFeatureDatFirst = [
+    {
+        icon : Gift,
+        title : "Bonus Poin",
+        desk : "Poin tambahan dari promo, ulang tahun, atau event khusus"
+    },
+    {
+        icon : RotateCcwClock,
+        title : "Riwayat Poin",
+        desk : "semua pergerakan poin tercatat dan bisa di telusuri member"
+    },
+    {
+        icon : Clock4,
+        title : "Masa Berlaku Poin",
+        desk : "Poin memiliki priode aktif sesuai kebijakan hotel"
+    },
+]
+
+const PoinFeatureDatSecond = [
+    {
+        icon : Plus,
+        title : "Penambahan Poin",
+        desk :"Poin bertambah otomatis dari aktivitas member"
+    },
+    {
+        icon : Minus,
+        title : "Penukaran Poin",
+        desk :"Poin berkurang saat di tukar reward atau kadaluarsa"
+    },
+    ]
 </script>
 
 <template>
@@ -30,6 +62,7 @@ const SolutionDat = {
         </div>
         <FeatureLoyalty />
         <TierFeature />
+        <PoinFeature :cardFirst="PoinFeatureDatFirst" :cardSecond="PoinFeatureDatSecond"  />
     </main>
     <FooterComponent />
 </template>

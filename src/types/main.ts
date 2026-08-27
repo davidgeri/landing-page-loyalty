@@ -1,5 +1,7 @@
-// * Loyalty Card
+import type{ Component } from "vue"
 
+
+// * Loyalty Card
 interface Requirement {
     title: string
     require: string
@@ -9,14 +11,12 @@ interface Benefit {
     text: string
 }
 
-interface TierStyle {
-    bg: string
-    icon: string
-}
-
 interface ClassStyles {
     header: string
-    tier: TierStyle
+    tier: {
+        bg : string 
+        icon : string 
+    }
     desk: string
     bgico: string
     required: {
@@ -27,11 +27,11 @@ interface ClassStyles {
 
 
 export interface PropsLoyaltyCard {
-    tier: string
-    title: string
-    desk: string
-    required: Requirement[]
-    benefit: Benefit[]
+    tier?: string
+    title?: string
+    desk?: string
+    required?: Requirement[]
+    benefit?: Benefit[]
     classCard? : ClassStyles  //Buka kalo udah mau di pake ini supaya jalan aja buildn ya dulu
 }
 
@@ -48,4 +48,12 @@ export interface FeatureLoyalty {
     Title : string 
     Desk : string 
     Feature : string[]
+}
+
+// * PoinFeatture
+
+export interface CardPoinFeature {
+    icon : Component
+    title : string 
+    desk : string 
 }

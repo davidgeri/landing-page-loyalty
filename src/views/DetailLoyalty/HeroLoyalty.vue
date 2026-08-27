@@ -2,6 +2,21 @@
 import { Handshake, Gift, Award } from '@lucide/vue'
 import CardLoyalty from '../../components/cardLoyalty/CardLoyalty.vue'
 
+const classCardPlatinum = {
+    header: "bg-linear-to-l from-[#2D1B69] to-[#3D2680]",
+    tier: {
+        bg: "border-[#9486BC] bg-[#cfc0fc43]",
+        icon: "text-[#E5DDFF]"
+    },
+    desk: "text-[#C7C7CC]",
+    bgico: "border-[#AFA9FC] bg-[#564097]",
+    required: {
+        title: "text-[#909090] font-medium",
+        require: "text-[#6A6A6A] font-semibold"
+
+    }
+}
+
 const FloatText = [
     {
         ico : Handshake,
@@ -101,6 +116,7 @@ const props = defineProps<Props>()
                     :desk="Card.desk"
                     :required="Card.required"
                     :benefit="Card.benefit"
+                    :class-card="classCardPlatinum"
                 />
             </div>
 

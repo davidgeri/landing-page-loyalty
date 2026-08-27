@@ -79,45 +79,78 @@ const BenefitSilver = [
 ]
 
 const classCardPlatinum = {
-    header : "",
-    tier : "",
-    desk : "",
-    bgico : "",
-    required : {
-        title : "",
-        require : ""
+    header: "bg-linear-to-l from-[#2D1B69] to-[#3D2680]",
+    tier: {
+        bg: "border-[#9486BC] bg-[#cfc0fc43]",
+        icon: "text-[#E5DDFF]"
+    },
+    desk: "text-[#C7C7CC]",
+    bgico: "border-[#AFA9FC] bg-[#564097]",
+    required: {
+        title: "text-[#909090] font-medium",
+        require: "text-[#6A6A6A] font-semibold"
+
+    }
+}
+
+const classCardGold = {
+    header: "bg-linear-to-l from-[#8B1A0F] to-[#C73D1E]",
+    tier: {
+        bg: "border-[#FFB9BA] bg-[#f0987b4f]",
+        icon: "text-[#ffff]"
+    },
+    desk: "text-[#FF8789]",
+    bgico: "border-[#FF989A] bg-[#D14A2E]",
+    required: {
+        title: "text-[#909090] font-medium",
+        require: "text-[#6A6A6A] font-semibold"
+
+    }
+}
+const classCardSilver = {
+    header: "bg-linear-to-l from-[#2A2A2A] to-[#3D3D3D]",
+    tier: {
+        bg: "bg-[#6b6b6b92] border-[#3D3D3D]",
+        icon: "text-[#ffff]"
+    },
+    desk: "text-[#CECECE]",
+    bgico: "border-[#989898] bg-[#5C5C5C]",
+    required: {
+        title: "text-[#909090] font-medium",
+        require: "text-[#6A6A6A] font-semibold"
+
     }
 }
 
 const Cards = [
     {
-        title: "Your Tier",
         tier: "Silver",
         desk: "Top-tier membership with maximum benefits and privilages",
         required: RequiredSilver,
         benefit: BenefitSilver,
-        classCard : 
+        classCard: classCardSilver
     },
     {
-        title: "Your Tier",
         tier: "Gold",
         desk: "Top-tier membership with maximum benefits and privilages",
         required: RequiredGold,
-        benefit: BenefitGold
+        benefit: BenefitGold,
+        classCard: classCardGold
     },
     {
         title: "Your Tier",
         tier: "Platinum",
         desk: "Top-tier membership with maximum benefits and privilages",
         required: RequiredPlatinum,
-        benefit: BenefitPlatinum
+        benefit: BenefitPlatinum,
+        classCard: classCardPlatinum
     }
 ]
 
 </script>
 
 <template>
-    <section class="mx-auto mb-20 max-w-7xl px-4 sm:px-6 md:mb-28 lg:px-8 flex flex-col gap-10">
+    <section class="mx-auto mb-20 max-w-7xl px-4 sm:px-6 md:mb-28 lg:px-8 flex flex-col gap-10 ">
 
         <div class="flex gap-3 flex-col text-center">
             <span class="flex justify-center">
@@ -128,13 +161,10 @@ const Cards = [
 
         <div class="grid grid-cols-1 gap-3 md:grid-cols-3">
             <div v-for="item in Cards" :key="item.tier" class="h-full">
-                <CardLoyalty
-                class="h-full"
-                :title="item.title" 
-                :tier="item.tier" 
-                :desk="item.desk" 
-                :required="item.required"
-                :benefit="item.benefit" />
+                <CardLoyalty class="h-full" :title="item.title" :tier="item.tier" :desk="item.desk"
+                    :required="item.required" :benefit="item.benefit"
+                    :class-card="item.classCard"
+                    />
             </div>
         </div>
 
