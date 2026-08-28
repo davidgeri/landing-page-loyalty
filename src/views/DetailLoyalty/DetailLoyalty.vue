@@ -2,13 +2,19 @@
 import Navbar from '../../components/navbar/Navbar.vue';
 import FooterComponent from '../../components/footer/FooterComponent.vue';
 import HeroLoyalty from './HeroLoyalty.vue';
-import {Gift, RotateCcwClock,Clock4, Plus, Minus } from "@lucide/vue"
+import { Gift, RotateCcwClock, Clock4, Plus, Minus } from "@lucide/vue"
+import PromotionFeature from './PromotionFeature.vue';
 
 import ClientProblemLoyalty from './ClientProblemLoyalty.vue';
 import SolutionLoyalty from './SolutionLoyalty.vue';
 import FeatureLoyalty from './FeatureLoyalty.vue';
 import TierFeature from './TierFeature.vue';
 import PoinFeature from './PoinFeature.vue';
+import RewardFeature from './RewardFeature.vue';
+import FlowLoyalty from './FlowLoyalty.vue';
+import BenefitLoyalty from './BenefitLoyalty.vue';
+import Cta from '../../components/cta/Cta.vue';
+import FaqLoyalty from './FaqLoyalty.vue';
 
 const LeftSide = {
     heading: "Loyalty is Priority",
@@ -16,40 +22,57 @@ const LeftSide = {
 }
 
 const SolutionDat = {
-    Title : "Penjelasan Solusi",
-    Desk : "Cakra Loyalty membantu hotel memberikan pengalaman yang lebih personal serta membangun hubungan jangka panjang dengan tamu melalui program loyalitas."
+    Title: "Penjelasan Solusi",
+    Desk: "Cakra Loyalty membantu hotel memberikan pengalaman yang lebih personal serta membangun hubungan jangka panjang dengan tamu melalui program loyalitas."
 }
 
 const PoinFeatureDatFirst = [
     {
-        icon : Gift,
-        title : "Bonus Poin",
-        desk : "Poin tambahan dari promo, ulang tahun, atau event khusus"
+        icon: Gift,
+        title: "Bonus Poin",
+        desk: "Poin tambahan dari promo, ulang tahun, atau event khusus"
     },
     {
-        icon : RotateCcwClock,
-        title : "Riwayat Poin",
-        desk : "semua pergerakan poin tercatat dan bisa di telusuri member"
+        icon: RotateCcwClock,
+        title: "Riwayat Poin",
+        desk: "semua pergerakan poin tercatat dan bisa di telusuri member"
     },
     {
-        icon : Clock4,
-        title : "Masa Berlaku Poin",
-        desk : "Poin memiliki priode aktif sesuai kebijakan hotel"
+        icon: Clock4,
+        title: "Masa Berlaku Poin",
+        desk: "Poin memiliki priode aktif sesuai kebijakan hotel"
     },
 ]
 
 const PoinFeatureDatSecond = [
     {
-        icon : Plus,
-        title : "Penambahan Poin",
-        desk :"Poin bertambah otomatis dari aktivitas member"
+        icon: Plus,
+        title: "Penambahan Poin",
+        desk: "Poin bertambah otomatis dari aktivitas member"
     },
     {
-        icon : Minus,
-        title : "Penukaran Poin",
-        desk :"Poin berkurang saat di tukar reward atau kadaluarsa"
+        icon: Minus,
+        title: "Penukaran Poin",
+        desk: "Poin berkurang saat di tukar reward atau kadaluarsa"
     },
-    ]
+]
+
+const viewCta = {
+    subheading: "Langkah Selanjutnya",
+    title: "Temukan Solusi Add-ons yang Tepat untuk Hotel",
+    desk: " Konsultasikan kebutuhan hotel Anda bersama tim Cakrasoft dan dapatkan informasi produk yang sesuai.",
+}
+
+const button = {
+    leftbtn: {
+        name: "Request Demo",
+        navto: "/request-demo"
+    },
+    rightbtn: {
+        name: "Contact Our Team",
+        navto: "/contact-team"
+    }
+}
 </script>
 
 <template>
@@ -62,8 +85,17 @@ const PoinFeatureDatSecond = [
         </div>
         <FeatureLoyalty />
         <TierFeature />
-        <PoinFeature :cardFirst="PoinFeatureDatFirst" :cardSecond="PoinFeatureDatSecond"  />
+        <PoinFeature :cardFirst="PoinFeatureDatFirst" :cardSecond="PoinFeatureDatSecond" />
+        <PromotionFeature />
+        <RewardFeature />
+        <FlowLoyalty />
+        <BenefitLoyalty />
+        <FaqLoyalty />
+        <div class="-mb-36">
+            <Cta :view="viewCta" :button="button" />
+        </div>
     </main>
+
     <FooterComponent />
 </template>
 
