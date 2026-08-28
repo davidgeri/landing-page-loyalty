@@ -32,7 +32,7 @@ export interface PropsLoyaltyCard {
     desk?: string
     required?: Requirement[]
     benefit?: Benefit[]
-    classCard? : ClassStyles  //Buka kalo udah mau di pake ini supaya jalan aja buildn ya dulu
+    classCard? : ClassStyles  
 }
 
 // * Solution Loyalty 
@@ -56,4 +56,22 @@ export interface CardPoinFeature {
     icon : Component
     title : string 
     desk : string 
+}
+
+// * Faq Component
+
+interface faq  {
+    question: string 
+    answer : string 
+    icon? : Component
+}
+
+export interface FaqComponent {
+    HeadTitle : string
+    Title : string 
+    desk : string 
+    style? : string 
+    pill?: string 
+    faqComp : faq[]
+    
 }

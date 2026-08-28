@@ -1,8 +1,8 @@
 <script setup lang="ts">
 
 interface Props {
-    text: string
-    classPil : string
+    text: string | undefined
+    classPil? : string
 }
 
 const props = defineProps<Props>()
@@ -10,7 +10,7 @@ const props = defineProps<Props>()
 
 <template>
     <p 
-        :class="classPil"
+        :class="classPil === undefined ? 'text-blue-500' : classPil"
         class="p-1 px-10 rounded-2xl border font-semibold">
         {{ props.text }}
     </p>
