@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import OutlinePillPing from '../../components/outlinepill/OutlinePillPing.vue';
 
-import type { PropsSolutionLoyalty } from '../../types/main.ts';
+import type { PropsSolutionLoyalty } from '../../components/outlinepill/types/main.ts';
 
 const Pill = {
     textStyle : "text-blue-500",

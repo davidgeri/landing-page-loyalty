@@ -4,7 +4,7 @@ import { Cloud, Award  } from "@lucide/vue"
 import { RouterLink } from "vue-router"
 import Badge from './Badge.vue';
 
-const flight1 = '<div class="flex gap-1 text-sm">Mulai Coba <span class="-mr-1 inline-flex items-center justify-center leading-none px-1.5 rounded-sm bg-blue-600 text-blue-50 text-xs font-medium font-mono">TRY NOW</span></div>';
+const Tooltip = '<div class="flex gap-1 text-sm">Mulai Coba <span class="-mr-1 inline-flex items-center justify-center leading-none px-1.5 rounded-sm bg-blue-600 text-blue-50 text-xs font-medium font-mono">TRY NOW</span></div>';
 
     interface Left_button {
         name: string
@@ -55,7 +55,7 @@ const flight1 = '<div class="flex gap-1 text-sm">Mulai Coba <span class="-mr-1 i
                     class="flex flex-col items-center gap-3 text-center sm:flex-row md:gap-5">
                     <RouterLink :to="dataHero.left_button.navto"
                         class="w-full rounded-xl bg-blue-500 p-2 text-lg font-semibold text-white duration-300 hover:bg-blue-400 sm:w-auto sm:flex-1"
-                        v-tooltip.top="{ value: flight1, escape: false }">{{ dataHero.left_button.name }} 
+                        v-tooltip.top="{ value: Tooltip, escape: false }">{{ dataHero.left_button.name }} 
                     </RouterLink>
 
                     <RouterLink class="w-full rounded-xl border border-blue-500 p-2 text-lg font-semibold text-blue-500 sm:w-auto sm:flex-1"

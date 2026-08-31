@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { BadgeCheck, Crown, Check } from '@lucide/vue'
-import type { PropsLoyaltyCard } from '../../types/main'
+import type { PropsLoyaltyCard } from '../outlinepill/types/main'
 
 const props = defineProps<PropsLoyaltyCard>()
 </script>
