@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
-import type { FaqComponent } from '../../types/main'
+import type { FaqComponent } from '../outlinepill/types/main.ts'
 import OutlinePill from '../outlinepill/OutlinePill.vue';
 
 const openFaqId = ref<number | null>(0)

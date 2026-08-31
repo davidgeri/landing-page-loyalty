@@ -8,6 +8,7 @@ import Aura from '@primevue/themes/aura'
 import Tooltip from 'primevue/tooltip'
 import { definePreset } from '@primevue/themes'
 import AnimateOnScroll from 'primevue/animateonscroll';
+import { createHead } from '@unhead/vue/client'
 
 
 const CakraPreset = definePreset(Aura, {
@@ -28,6 +29,7 @@ const CakraPreset = definePreset(Aura, {
     }
 });
 
+const head = createHead()
 const app = createApp(App)
 app.directive('tooltip', Tooltip)
 app.use(createPinia())
@@ -39,6 +41,7 @@ app.use(PrimeVue, {
         }
     }
 })
+app.use(head)
 app.directive('animateonscroll', AnimateOnScroll);
 app.use(router)
 app.mount('#app')

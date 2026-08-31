@@ -1,4 +1,23 @@
 <script setup lang="ts">
+import { useSeoMeta} from '@unhead/vue'
+
+const env = import.meta.env
+
+// useSeoMeta({
+//     title: '',
+//     description: '',
+//     ogTitle: '',
+//     ogDescription: '',
+//     ogImage: '',
+//     ogUrl: '',
+// })
+
+// useHead({
+//     link: [
+//         {rel: 'canonical', href: env.VITE_STATUS === 'DEV'? env.VITE_URL_DEV : env.VITE_URL_PROD}
+//     ]
+// })
+
 import {
     Building2,
     User,
@@ -16,8 +35,6 @@ import {
 
 import OutlinePillPing from "../../components/outlinepill/OutlinePillPing.vue";
 
-// Data per kolom (icon header + list item) dipisah dari template supaya urutan/isi
-// gampang diubah tanpa menyentuh markup, dan strukturnya tetap konsisten kiri-kanan.
 interface BenefitItem {
     icon: unknown;
     text: string;
@@ -60,6 +77,7 @@ const data = {
     pillBgPing: "bg-blue-500",
     title: "Manfaat Loyalty",
 };
+
 </script>
 
 <template>

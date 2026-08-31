@@ -11,7 +11,6 @@ import { Award } from '@lucide/vue';
 import ProductIntegration from './ProductIntegration.vue';
 import Testimonial from './Testimonial.vue';
 import Cta from '../../components/cta/Cta.vue';
-// import {useHomeSeo} from './UseHomeSeo.ts'
 
 // * SEO 
 
