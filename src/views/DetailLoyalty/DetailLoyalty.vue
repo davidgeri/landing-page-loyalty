@@ -1,4 +1,28 @@
 <script setup lang="ts">
+import {useSeoMeta, useHead} from "@unhead/vue"
+
+const env = import.meta.env
+
+useSeoMeta({
+  title: 'Cakra Loyalty | Program Loyalitas Tamu Hotel',
+  description: 'Kelola membership, tier, poin, dan reward tamu hotel dalam satu sistem terintegrasi. Cakra Loyalty by Cakrasoft — bangun loyalitas tamu jangka panjang.',
+  ogTitle: 'Cakra Loyalty — Membership, Poin & Reward untuk Hotel',
+  ogDescription: 'Bangun loyalitas tamu melalui program membership, sistem poin otomatis, dan reward yang dipersonalisasi. Terintegrasi dengan ekosistem Cakrasoft.',
+  ogImage: '/images/og-loyalty-cakrasoft.jpg',
+  ogUrl: `${env.VITE_STATUS === 'DEV' ? env.VITE_URL_DEV : env.VITE_URL_PROD}/loyalty`,
+  twitterCard: 'summary_large_image',
+})
+
+useHead({
+  link: [
+    { rel: 'canonical', href: `${env.VITE_STATUS === 'DEV' ? env.VITE_URL_DEV : env.VITE_URL_PROD}/loyalty` }
+  ],
+  meta: [
+    { name: 'robots', content: 'index, follow' }
+  ]
+})
+
+
 import Navbar from '../../components/navbar/Navbar.vue';
 import FooterComponent from '../../components/footer/FooterComponent.vue';
 import HeroLoyalty from './HeroLoyalty.vue';
