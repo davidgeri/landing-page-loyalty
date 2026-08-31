@@ -1,4 +1,27 @@
 <script setup lang="ts">
+import {useSeoMeta, useHead} from "@unhead/vue"
+
+const env = import.meta.env
+
+useSeoMeta({
+  title: 'Cakrasoft | Solusi Add-ons Cloud Hotel Indonesia',
+  description: 'Solusi add-ons terintegrasi untuk Cakrasoft Cloud Hotel — Channel Manager, Booking Engine, dan Cakra Loyalty. Dipercaya 250+ hotel di Indonesia.',
+  ogTitle: 'Cakrasoft — Solusi Add-ons untuk Mempercepat Pertumbuhan Hotel',
+  ogDescription: 'Maksimalkan reservasi, kendalikan semua channel penjualan, dan tingkatkan loyalitas tamu dengan add-ons yang terintegrasi Cakrasoft Cloud Hotel.',
+  ogImage: '/images/og-home-cakrasoft.jpg',
+  ogUrl: `${env.VITE_STATUS === 'DEV' ? env.VITE_URL_DEV : env.VITE_URL_PROD}`,
+  twitterCard: 'summary_large_image',
+})
+
+useHead({
+  link: [
+    { rel: 'canonical', href: `${env.VITE_STATUS === 'DEV' ? env.VITE_URL_DEV : env.VITE_URL_PROD}` }
+  ],
+  meta: [
+    { name: 'robots', content: 'index, follow' }
+  ]
+})
+
 import Navbar from '../../components/navbar/Navbar.vue';
 import FooterComponent from '../../components/footer/FooterComponent.vue';
 import HomeHero from './HomeHero.vue';

@@ -1,4 +1,28 @@
 <script setup lang="ts">
+import {useSeoMeta, useHead} from "@unhead/vue"
+
+const env = import.meta.env
+
+useSeoMeta({
+  title: 'Channel Manager Hotel | Cakrasoft',
+  description: 'Kelola harga dan ketersediaan kamar di semua OTA dari satu sistem. Cakrasoft Channel Manager — sinkronisasi real-time, integrasi luas, user friendly.',
+  ogTitle: 'Cakrasoft Channel Manager — Satu Sistem untuk Semua Channel',
+  ogDescription: 'Update harga dan inventori kamar hotel ke berbagai OTA sekaligus, otomatis dan real-time. Kurangi overbooking, tingkatkan revenue.',
+  ogImage: '/images/og-channel-manager-cakrasoft.jpg',
+  ogUrl: `${env.VITE_STATUS === 'DEV' ? env.VITE_URL_DEV : env.VITE_URL_PROD}/channel-manager`,
+  twitterCard: 'summary_large_image',
+})
+
+useHead({
+  link: [
+    { rel: 'canonical', href: `${env.VITE_STATUS === 'DEV' ? env.VITE_URL_DEV : env.VITE_URL_PROD}/channel-manager` }
+  ],
+  meta: [
+    { name: 'robots', content: 'index, follow' }
+  ]
+})
+
+
 import FooterComponent from '../../components/footer/FooterComponent.vue';
 import Navbar from '../../components/navbar/Navbar.vue';
 import Hero from './Hero.vue';

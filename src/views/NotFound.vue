@@ -1,4 +1,21 @@
 <script setup lang="ts">
+import {useSeoMeta, useHead} from "@unhead/vue"
+
+useSeoMeta({
+  title: '404 - Halaman Tidak Ditemukan | Cakrasoft',
+  description: 'Maaf, halaman yang Anda cari tidak dapat ditemukan atau telah dipindahkan. Kembali ke beranda Cakrasoft untuk melihat solusi teknologi hotel kami.',
+  ogTitle: '404 - Halaman Tidak Ditemukan | Cakrasoft',
+  ogDescription: 'Halaman yang Anda tuju tidak tersedia. Silakan kembali ke beranda Cakrasoft.',
+  ogImage: '/images/Logo-cakra-minimal.png',
+  twitterCard: 'summary',
+})
+
+useHead({
+  meta: [
+    { name: 'robots', content: 'noindex, nofollow' }
+  ]
+})
+
 import Navbar from '../components/navbar/Navbar.vue';
 import { RouterLink } from 'vue-router';
 import FooterComponent from '../components/footer/FooterComponent.vue';

@@ -1,4 +1,27 @@
 <script setup lang="ts">
+import { useSeoMeta, useHead } from '@unhead/vue'
+
+const env = import.meta.env
+
+useSeoMeta({
+  title: 'Request Demo Gratis | Cakrasoft Cloud Hotel',
+  description: 'Jadwalkan demo gratis solusi add-ons Cakrasoft. Coba langsung Booking Engine, Channel Manager, dan Cakra Loyalty untuk bisnis hotel Anda.',
+  ogTitle: 'Request Demo Gratis Produk Add-ons Cakrasoft',
+  ogDescription: 'Konsultasikan kebutuhan hotel Anda dan lihat bagaimana sistem Booking Engine, Channel Manager, & Loyalty kami bekerja meningkatkan pendapatan hotel.',
+  ogImage: '/images/og-request-demo-cakrasoft.jpg',
+  ogUrl: `${env.VITE_STATUS === 'DEV' ? env.VITE_URL_DEV : env.VITE_URL_PROD}/request-demo`,
+  twitterCard: 'summary_large_image',
+})
+
+useHead({
+  link: [
+    { rel: 'canonical', href: `${env.VITE_STATUS === 'DEV' ? env.VITE_URL_DEV : env.VITE_URL_PROD}/request-demo` }
+  ],
+  meta: [
+    { name: 'robots', content: 'index, follow' }
+  ]
+})
+
 import { ref } from 'vue'
 import Navbar from '../../components/navbar/Navbar.vue'
 import Footer from '../../components/footer/FooterComponent.vue'
