@@ -1,23 +1,4 @@
 <script setup lang="ts">
-import { useSeoMeta} from '@unhead/vue'
-
-const env = import.meta.env
-
-// useSeoMeta({
-//     title: '',
-//     description: '',
-//     ogTitle: '',
-//     ogDescription: '',
-//     ogImage: '',
-//     ogUrl: '',
-// })
-
-// useHead({
-//     link: [
-//         {rel: 'canonical', href: env.VITE_STATUS === 'DEV'? env.VITE_URL_DEV : env.VITE_URL_PROD}
-//     ]
-// })
-
 import {
     Building2,
     User,

@@ -1,6 +1,5 @@
 import type{ Component } from "vue"
 
-
 // * Loyalty Card
 interface Requirement {
     title: string
@@ -73,5 +72,26 @@ export interface FaqComponent {
     style? : string 
     pill?: string 
     faqComp : faq[]
-    
+}
+
+//* ButtonProps
+
+export interface ButtonProps {
+    onClick: (e: MouseEvent) => void
+    class? : string
+    title? : string
+}
+
+//* ProblemBe
+export interface ProblemData {
+    title: string 
+    desk : string 
+    icon : Component
+}
+
+//* OutlinePillPing
+export interface OutlinePillPing {
+    text : string 
+    classPil: string 
+    bgPing: string 
 }
