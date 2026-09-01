@@ -1,12 +1,7 @@
 <script setup lang="ts">
+import type { ButtonProps } from '../../type/main';
 
-interface Props {
-    onClick: (e: MouseEvent) => void
-    class? : string
-    title? : string
-}
-
-const props = defineProps<Props>()
+const props = defineProps<ButtonProps>()
 </script>
 
 <template>

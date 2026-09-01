@@ -1,22 +1,17 @@
 <script setup lang="ts">
+import type{ OutlinePillPing } from '../../type/main';
 
-interface Props {
-    text: string
-    classPil: string
-    bgPing: string
-}
-
-const props = defineProps<Props>()
+const props = defineProps<OutlinePillPing>()
 </script>
 
 <template>
-    <div class="p-1 px-8 rounded-2xl border font-semibold flex gap-3 items-center justify-center">
-        <span class="flex justify-center">
-            <p class="w-3 h-3 rounded-full" :class="props.bgPing"></p>
-            <p class="w-3 h-3 rounded-full absolute animate-ping" :class="props.bgPing"></p>
+    <div class="inline-flex items-center justify-center gap-3 rounded-2xl border border-current p-1 px-8 font-semibold">
+        <span class="relative flex items-center justify-center">
+            <span class="h-3 w-3 rounded-full" :class="props.bgPing"></span>
+            <span class="absolute h-3 w-3 animate-ping rounded-full" :class="props.bgPing"></span>
         </span>
-        <p :class="classPil" class="">
+        <span :class="props.classPil" class="text-sm sm:text-base">
             {{ props.text }}
-        </p>
+        </span>
     </div>
 </template>

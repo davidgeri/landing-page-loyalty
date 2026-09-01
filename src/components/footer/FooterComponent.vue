@@ -29,13 +29,13 @@ const socials = [
 ]
 
 const companyLinks = [
-    { label: "Tentang Kami", to: "" },
-    { label: "Bantuan", to: "" },
+    { label: "Tentang Kami", to: "/about" },
+    { label: "Bantuan", to: "/contact" },
     { label: "Kontak", to: "" },
 ]
 
 const productLinks = [
-    { label: "Tentang Kami", to: "" },
+    { label: "", to: "" },
     { label: "Bantuan", to: "" },
     { label: "Kontak", to: "" },
 ]

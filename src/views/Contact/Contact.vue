@@ -64,7 +64,6 @@ const ourSupport = [
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
 
-        <!-- Contact Information -->
         <div class="lg:col-span-5 space-y-8 text-left">
 
           <h1 class="text-3xl sm:text-4xl font-semibold text-slate-900 tracking-tight leading-tight">

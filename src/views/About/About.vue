@@ -44,7 +44,7 @@ const button = {
   },
   rightbtn: {
     name: "Contact Our Team",
-    navto: "/contact-team"
+    navto: "/contact"
   }
 }
 

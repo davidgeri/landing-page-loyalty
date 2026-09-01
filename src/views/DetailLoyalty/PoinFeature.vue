@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { defineComponent, h, type PropType } from 'vue';
 import OutlinePill from '../../components/outlinepill/OutlinePill.vue';
-import type { CardPoinFeature } from '../../components/outlinepill/types/main.ts';
+import type { CardPoinFeature } from '../../type/main.ts';
 
 const OutlinePillDat = {
     text: "Poin Feature",
