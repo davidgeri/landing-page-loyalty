@@ -48,17 +48,17 @@ const ctaButton = {
 
 const RightsideHero = [
   {
-    image : "/assets/c-manajer-ui.png",
+    image : "/assets/chanel-manajer.png",
     alt : "Dashboard 1",
     class : "absolute top-2 md:top-4 right-10 md:right-16 w-50 md:w-70 rounded-lg shadow-xl bg-white z-10 rotate-[5deg] transition-transform duration-300 hover:-translate-y-3 cursor-pointer"
   },
   {
-    image : "/assets/frontdesk-desktop-1.png",
+    image : "/assets/frontdesk.png",
     alt : "Dashboard 2",
     class : "absolute top-16 md:top-20 left-4 md:left-12 w-50 md:w-70 rounded-lg shadow-xl bg-white z-20 rotate-[-8deg] transition-transform duration-300 hover:hover:-translate-y-3 cursor-pointer"
   },
   {
-    image : "/assets/loyalty-mobile-2.png",
+    image : "/assets/loyalty.png",
     alt : "Dashboard 3",
     class : "absolute bottom-6 md:top-30 right-2 md:right-4 w-50 md:w-70 rounded-lg shadow-2xl border border-gray-100 bg-white z-30 rotate-12 transition-transform duration-300 hover:hover:-translate-y-3 cursor-pointer"
   },

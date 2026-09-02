@@ -64,7 +64,7 @@ const products = [
     desc: 'Fitur yang memudahkan Anda mengelola semuanya dalam satu system dan terintegrasi pada departement hotel.',
     isFullWidth: false,
     icon: '/icon/frontdesk.png', 
-    image: '/assets/frontdesk-ui.png'
+    image: '/assets/frontdesk-page.png'
   },
   {
     slug: 'point-of-sales',
@@ -72,7 +72,7 @@ const products = [
     desc: 'Solusi ampuh dan mudah digunakan untuk menangani transaksi pada semua outlet.',
     isFullWidth: false,
     icon: '/icon/pos.png',
-    image: '/assets/pos-ui.png'
+    image: '/assets/pos-page.png'
   },
   {
     slug: 'accounting',
@@ -80,7 +80,7 @@ const products = [
     desc: 'Menawarkan pengelolaan transaksi keuangan mudah, terintegrasi, realtime, cepat, dan akurat.',
     isFullWidth: false,
     icon: '/icon/accounting.png',
-    image: '/assets/accounting-ui.png'
+    image: '/assets/accounting-page.png'
   },
   {
     slug: 'banquet',
@@ -88,35 +88,35 @@ const products = [
     desc: 'Memberikan solusi tepat untuk menghandle kegiatan Meeting, Incentive, Convention, and Exhibition.',
     isFullWidth: false,
     icon: '/icon/banquet.png',
-    image: '/assets/banquet-ui.png'
+    image: '/assets/banquet-page.png'
   },
   {
     slug: 'inventory',
     title: 'Inventory',
     desc: 'Kami menawarkan solusi manajemen inventaris menggunakan metode FIFO, LIFO, dan Average.',
     isFullWidth: false,
-    icon: '/icon/inven.png',
-    image: '/assets/loyalty-ui.png'
+    icon: '/icon/inventory.png',
+    image: '/assets/inventory-page.png'
   },
   {
     slug: 'channel-manager',
     title: 'Channel Manager',
     desc: 'Terintegrasi dengan OTA dan PMS yang bisa melakukan pembaharuan secara real time sehingga menjadi lebih efisien.',
     isFullWidth: false,
-    icon: '/icon/c-manajer.png',
-    image: '/assets/c-manajer-ui.png'
+    icon: '/icon/channel-manager.png',
+    image: '/assets/channel-manager-page.png'
   },
   {
     slug: 'booking-engine',
     title: 'Booking Engine',
     desc: 'Cakrahub Booking Engine terintegrasi ke dalam situs web hotel untuk memfasilitasi reservasi online secara langsung.',
     isFullWidth: true,
-    icon: '/icon/b-engine.png',
-    image: '/assets/b-engine-ui.png'
+    icon: '/icon/booking-engine.png',
+    image: '/assets/booking-engine-page.png'
   },
   {
     slug: 'cakra-loyalty',
-    title: 'Cakra Royalty',
+    title: 'Cakra Loyalty',
     desc: 'Membantu hotel membangun loyalitas tamu melalui membership, tier, poin, promosi, dan reward yang terintegrasi.',
     isFullWidth: true,
     isLoyalty: true
