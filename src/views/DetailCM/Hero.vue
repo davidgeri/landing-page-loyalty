@@ -45,7 +45,7 @@ import { GlobeCheck, Lightbulb, TrendingUp, Activity, ArrowLeftRight } from '@lu
           
           <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-100">
             <img 
-              src="../../../public/assets/cm-ui.png" 
+              src="../../../public/assets/channel-manager-page.png" 
               alt="Cakrasoft Channel Manager Dashboard" 
               class="w-full max-w-xl h-auto object-cover opacity-90 hover:opacity-100 transition-opacity"
             />

@@ -22,7 +22,7 @@ const products = [
     slug: 'front-desk',
     title: 'Front Desk',
     icon: '/icon/frontdesk.png', 
-    image: '/assets/frontdesk-ui.png',
+    image: '/assets/frontdesk-page.png',
     detailDesc: 'Cakrasoft Cloud Hotel – Modul Front Desk dirancang agar komprehensif, mudah digunakan, aman, dan akurat. Sistem ini lebih dari sekadar sistem hotel biasa; sistem ini memaksimalkan pendapatan dan mengendalikan biaya, sehingga operasional hotel menjadi efektif dan efisien.',
     advantages: ['Booking Super Mudah', 'Transaksi Cepat Akurat', 'Manajemen Kamar Efisien', 'Bebas Risiko Overbooking', 'Integrasi Sistem Menyeluruh']
   },
@@ -30,7 +30,7 @@ const products = [
     slug: 'point-of-sales',
     title: 'Point Of Sales',
     icon: '/icon/pos.png',
-    image: '/assets/pos-ui.png',
+    image: '/assets/pos-page.png',
     detailDesc: 'Cakrasoft Point of Sales menyediakan solusi bagi manajemen hotel untuk menangani transaksi di berbagai outlet, seperti layanan kamar (room service), restoran, kafe, layanan laundry, pusat bisnis, dan outlet lainnya. Berkat desain yang tangguh dan ramah pengguna, sistem ini menawarkan kemudahan operasional bagi para pengguna. Hanya dengan beberapa kali klik, pengguna dapat mengelola transaksi secara efisien di seluruh outlet.',
     advantages: ['User Friendly Interface', 'Solusi pemecahan masalah tingkat lanjut untuk industri perhotelan', 'Tingkatkan pendapatan melalui metode layanan yang cepat dan mudah.']
   },
@@ -38,7 +38,7 @@ const products = [
     slug: 'accounting',
     title: 'Accounting',
     icon: '/icon/accounting.png',
-    image: '/assets/accounting-ui.png',
+    image: '/assets/accounting-page.png',
     detailDesc: 'Sebuah aplikasi sistem akuntansi yang tangguh untuk hotel yang memungkinkan pengguna mengelola transaksi keuangan dengan mudah, cepat, dan akurat. Pengguna tidak dibebani oleh kerumitan pencatatan jurnal, karena setiap proses akan menghasilkan jurnal secara otomatis. Sistem ini meniadakan proses akuntansi lama yang rumit, serta memungkinkan pembuatan laporan keuangan secara instan.Cakrasoft Accounting System merupakan program utama untuk operasional *back-office* bisnis di industri perhotelan, termasuk hotel, restoran, serta berbagai usaha makanan dan minuman lainnya.',
     advantages: ['User Friendly Interface', 'Solusi pemecahan masalah tingkat lanjut untuk industri perhotelan', 'Tingkatkan pendapatan melalui metode layanan yang cepat dan mudah.']
   },
@@ -46,15 +46,15 @@ const products = [
     slug: 'banquet',
     title: 'Banquet',
     icon: '/icon/banquet.png',
-    image: '/assets/banquet-ui.png',
+    image: '/assets/banquet-page.png',
     detailDesc: 'Menyediakan solusi untuk kegiatan Meeting, Incentive, Convention, and Exhibition (MICE), reservasi, paket & tarif, pengelolaan tempat, serta penanganan transaksi.',
     advantages: ['User Friendly Interface', 'Solusi pemecahan masalah tingkat lanjut untuk industri perhotelan', 'Tingkatkan pendapatan melalui metode layanan yang cepat dan mudah.']
   },
   {
     slug: 'inventory',
     title: 'Inventory',
-    icon: '/icon/inven.png',
-    image: '/assets/loyalty-ui.png',
+    icon: '/icon/inventory.png',
+    image: '/assets/inventory-page.png',
     detailDesc: 'Inventory adalah aplikasi komprehensif berbasis cloud yang dirancang sebagai bagian dari Cakrasoft Cloud Hotel untuk mengefisienkan pengelolaan inventaris dan aset tetap bagi industri perhotelan, termasuk hotel, penginapan, restoran, kafe, serta bisnis terkait pariwisata lainnya. Aplikasi ini dirancang agar dapat beroperasi secara lancar, baik pada komputer yang berdiri sendiri (standalone) maupun dalam lingkungan jaringan, sehingga menawarkan fleksibilitas dan skalabilitas untuk memenuhi kebutuhan berbagai jenis organisasi.',
     advantages: ['User Friendly Interface', 'Solusi pemecahan masalah tingkat lanjut untuk industri perhotelan', 'Tingkatkan pendapatan melalui metode layanan yang cepat dan mudah.']
   }
