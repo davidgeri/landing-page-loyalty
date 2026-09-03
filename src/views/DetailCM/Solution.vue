@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { LineChart, CalendarCheck, Globe, Clock } from '@lucide/vue';
+import OutlinePillPing from '../../components/outlinepill/OutlinePillPing.vue';
 
 const solutions = [
   { icon: LineChart, position: "-top-6 left-1/2 -translate-x-1/2" },
@@ -7,6 +8,13 @@ const solutions = [
   { icon: Globe, position: "-bottom-6 left-1/2 -translate-x-1/2" },
   { icon: Clock, position: "top-1/2 -left-6 -translate-y-1/2" },
 ];
+
+
+const outlinepill = {
+  bgPing : "bg-blue-500",
+  text : "Solution",
+  classPill : "text-blue-500"
+}
 </script>
 
 <template>
@@ -15,9 +23,9 @@ const solutions = [
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
         <div class="lg:col-span-6 space-y-6">
-          <div class="inline-flex items-center gap-2 bg-blue-50 text-blue-600 border border-blue-200/60 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide uppercase shadow-sm">
-            <span class="w-2 h-2 rounded-full bg-blue-600"></span>
-            Our Solution
+          
+          <div>
+            <OutlinePillPing :bg-ping="outlinepill.bgPing" :class-pil="outlinepill.classPill" :text="outlinepill.text"/>
           </div>
 
           <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight leading-[1.15]">

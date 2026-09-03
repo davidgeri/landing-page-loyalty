@@ -119,7 +119,7 @@ function handleFormSubmit(): void {
         <LeftSideRequestDemo :small-products="Products" :data="data" />
 
         <section class="lg:col-span-7" aria-labelledby="request-demo-heading">
-          <div class="mx-auto max-w-[540px] rounded-xl border border-slate-300 bg-white p-4 shadow-sm sm:p-5">
+          <div class="mx-auto max-w-135 rounded-xl border border-slate-300 bg-white p-4 shadow-sm sm:p-5">
             <header class="mb-7">
               <h1 id="request-demo-heading" class="text-xl font-bold tracking-tight text-slate-800 sm:text-2xl">
                 Request <span class="text-[#075fe8]">Demo</span>

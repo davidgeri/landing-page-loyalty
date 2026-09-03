@@ -38,7 +38,7 @@ const problemCards: ProblemCard[] = [
 
 <template>
     <section class="mt-16 grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16" aria-labelledby="client-problem-title">
-        <header class="mx-auto flex max-w-xl flex-col gap-3 lg:mx-0">
+        <header class="mx-auto flex max-w-xl flex-col items-center gap-3 text-center lg:mx-0 lg:items-center">
             <p class="w-fit rounded-xl border border-red-500 px-5 py-1 text-sm font-semibold text-red-600">
                 {{ data.heading }}
             </p>

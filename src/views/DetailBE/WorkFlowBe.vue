@@ -27,7 +27,7 @@ const data = {
                             class="max-w-xl text-3xl font-semibold leading-tight tracking-[-0.04em] text-slate-900 md:text-5xl">
                             {{ data.title }}
                         </h2>
-                        <img class="w-120 h-100" :src="data.image" :alt="data.alt">
+                        <img class="md:w-120 md:h-100" :src="data.image" :alt="data.alt">
                     </header>
                 </article>
 

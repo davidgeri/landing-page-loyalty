@@ -30,14 +30,14 @@ const socials = [
 
 const companyLinks = [
     { label: "Tentang Kami", to: "/about" },
-    { label: "Bantuan", to: "/contact" },
-    { label: "Kontak", to: "" },
+    { label: "Bantuan", to: "/faq" },
+    { label: "Kontak", to: "/contact" },
 ]
 
 const productLinks = [
-    { label: "", to: "" },
-    { label: "Bantuan", to: "" },
-    { label: "Kontak", to: "" },
+    { label: "Booking Engine", to: "/product/booking-engine" },
+    { label: "Channel Manager", to: "/product/channel-manager" },
+    { label: "Cakra Loyalty", to: "/product/cakra-loyalty" },
 ]
 
 watch(showLocation, (newVal) => {

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
+import {ChevronDown} from "@lucide/vue"
 
 const categories = ['Umum', 'Integrasi', 'Harga', 'Keamanan']
 const activeTab = ref<string>('Umum')
@@ -152,16 +153,22 @@ const changeTab = (category:string ) => {
 <template>
   <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
-    <div class="flex flex-wrap justify-center gap-3 mb-10">
+    <div
+      class="mb-10 flex snap-x snap-mandatory gap-3 overflow-x-auto px-1 pb-2 sm:justify-center sm:overflow-visible"
+      role="tablist"
+      aria-label="Kategori FAQ"
+    >
       <button 
         v-for="cat in categories" 
         :key="cat"
         @click="changeTab(cat)"
+        :aria-selected="activeTab === cat"
+        role="tab"
         :class="[
-          'px-6 py-2.5 rounded-full text-sm md:text-base font-medium transition-colors border',
+          'shrink-0 snap-center whitespace-nowrap rounded-md border px-6 py-2.5 text-sm font-medium transition-colors md:text-base',
           activeTab === cat 
-            ? 'bg-blue-600 text-white border-blue-600' 
-            : 'bg-white text-gray-600 border-blue-300 hover:border-blue-600 hover:text-blue-600'
+            ? 'bg-blue-600 text-white border-blue-500' 
+            : 'bg-white text-gray-600 border-stone-900 hover:border-blue-600 hover:text-blue-600'
         ]"
       >
         {{ cat }}
@@ -179,15 +186,13 @@ const changeTab = (category:string ) => {
             @click="toggleFaq(faq.id)" 
             class="w-full flex items-center justify-between p-5 text-left focus:outline-none"
           >
-            <span class="font-bold text-gray-900 pr-4">{{ faq.question }}</span>
+            <span class="font-semibold text-gray-900 pr-4">{{ faq.question }}</span>
             
-            <svg 
-              class="w-5 h-5 text-blue-600 flex-shrink-0 transition-transform duration-300"
+            <ChevronDown 
+              class="w-5 h-5 text-stone-900 shrink-0 transition-transform duration-300"
               :class="{ 'rotate-180': openFaqId === faq.id }"
-              fill="none" stroke="currentColor" viewBox="0 0 24 24"
-            >
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
+            />
+
           </button>
 
           <div 

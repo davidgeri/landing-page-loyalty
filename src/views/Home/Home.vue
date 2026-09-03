@@ -35,10 +35,6 @@ import ProductIntegration from './ProductIntegration.vue';
 import Testimonial from './Testimonial.vue';
 import Cta from '../../components/cta/Cta.vue';
 
-// * SEO 
-
-// useHomeSeo()
-
 const dataHero = {
     images: "/images/Mockup(Hero).png",
     alt_img: "Mockup produk CakraSoft Cloud Hotel",
@@ -50,7 +46,7 @@ const dataHero = {
     },
     right_button: {
         name: "Explore Products",
-        navto: "products"
+        navto: "product"
     },
 }
 

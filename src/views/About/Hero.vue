@@ -2,6 +2,7 @@
 import { onMounted, onUnmounted } from 'vue';
 import { Network, TrendingUp, MapPinned} from '@lucide/vue';
 import { animate } from 'animejs';
+import OutlinePill from '../../components/outlinepill/OutlinePill.vue';
 
 const texts = ['Mendukung', 'Menunjang', 'Memajukan'];
 let index = 0;
@@ -65,9 +66,9 @@ const data = [
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
       <div class="lg:col-span-7 ">
-        <span class="inline-block py-1 px-3 rounded-full  text-blue-600 text-xs font-semibold mb-4 border border-blue-100">
-          Cakrasoft Distribution & Revenue Solution
-        </span>
+          <span class=" flex justify-start w-80 md:w-full">
+            <OutlinePill text="Revenue Solution" class-pil="text-blue-500 rounded-md" />
+          </span>
         <h1 class="text-4xl md:text-5xl font-bold text-stone-800 leading-tight mb-6">
           Solusi Teknologi 
           <span class="inline-block border-dashed border-2 border-stone-400 px-3 py-1 mx-2 align-middle">

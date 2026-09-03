@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { Clock, AlertTriangle, CalendarX, Edit3, Hourglass, EyeOff } from '@lucide/vue';
+import OutlinePillPing from '../../components/outlinepill/OutlinePillPing.vue';
 
 const problems = [
   {
@@ -33,17 +34,23 @@ const problems = [
     desc: "Tim kesulitan memantau seluruh koneksi"
   }
 ];
+
+const OutlinePillDat = {
+  bgPing : "bg-red-500",
+  classPill : "text-red-500",
+  text : "Client Problem"
+}
 </script>
 
 <template>
-  <section class="py-20 bg-slate-50/50">
+  <section class="py-20 ">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
+
       <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-        <div class="inline-flex items-center gap-2 bg-red-50 text-red-600 border border-red-200/60 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide uppercase shadow-sm">
-          <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
-          Client Problem
-        </div>
+
+        <span class="inline-flex items-center  tracking-wide uppercase">
+          <OutlinePillPing :bg-ping="OutlinePillDat.bgPing" :class-pil="OutlinePillDat.classPill" :text="OutlinePillDat.text" />
+        </span>
 
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight leading-[1.15]">
           Mengelola Banyak Channel Tanpa Sistem yang Tepat Itu Rumit.
@@ -51,13 +58,11 @@ const problems = [
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div 
-          v-for="(item, index) in problems" 
-          :key="index"
-          class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group"
-        >
+        <div v-for="(item, index) in problems" :key="index"
+          class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
           <div>
-            <div class="w-12 h-12 rounded-xl bg-red-50 text-red-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <div
+              class="w-12 h-12 rounded-xl border border-red-300 text-red-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
               <component :is="item.icon" class="w-8 h-8" />
             </div>
 
