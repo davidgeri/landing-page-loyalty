@@ -37,7 +37,7 @@ const data = {
         </div>
 
         <ul class="grid w-full max-w-xl gap-4 sm:grid-cols-2" aria-label="Daftar fitur membership">
-            <li class="flex items-center gap-3 rounded-lg border border-slate-200 p-3"
+            <li class="flex items-center gap-3 rounded-lg p-3 hover:bg-slate-50 duration-100 hover:scale-[1.02]"
                 v-for="(item, index) in data.Feature"
                 :key="index"
             >

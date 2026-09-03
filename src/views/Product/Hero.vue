@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import OutlinePill from '../../components/outlinepill/OutlinePill.vue'
 
   interface Leftside {
     heading : string
@@ -26,8 +27,8 @@
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
       
       <div class="lg:col-span-7">
-        <span class="inline-block py-1 px-3 rounded-full bg-blue-50 text-blue-600 text-xs font-semibold mb-4 border border-blue-100">
-          {{ props.Leftside.heading }}
+        <span class="flex justify-start">
+          <OutlinePill :text="props.Leftside.heading" class-pil="text-blue-500" />
         </span>
         <div class="text-left md:text-left">
           <h1 class="text-3xl md:text-5xl font-bold text-gray-800 leading-tight">

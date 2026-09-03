@@ -63,7 +63,7 @@ const detailData = {
           </p>
 
           <div class="space-y-2">
-            <button @click="activeMenu = 'profil'" :class="['w-full flex gap-4 p-4 rounded-xl text-left transition-all duration-300 border-l-4', activeMenu === 'profil' ? 'bg-blue-50 border-blue-600 shadow-sm' : 'border-transparent hover:bg-gray-100']">
+            <button @click="activeMenu = 'profil'" :class="['w-full flex gap-4 p-4 rounded-md text-left transition-all duration-300 border-l-4', activeMenu === 'profil' ? ' border-blue-500 shadow-sm' : 'border-transparent hover:bg-gray-100']">
               <div class="text-blue-500 mt-1"><Hotel /></div>
               <div>
                 <h4 class="font-bold text-base text-gray-800">Profile Perusahaan</h4>
@@ -71,7 +71,7 @@ const detailData = {
               </div>
             </button>
 
-            <button @click="activeMenu = 'latarBelakang'" :class="['w-full flex gap-4 p-4 rounded-xl text-left transition-all duration-300 border-l-4', activeMenu === 'latarBelakang' ? 'bg-blue-50 border-blue-600 shadow-sm' : 'border-transparent hover:bg-gray-100']">
+            <button @click="activeMenu = 'latarBelakang'" :class="['w-full flex gap-4 p-4 rounded-md text-left transition-all duration-300 border-l-4', activeMenu === 'latarBelakang' ? ' border-blue-600 shadow-sm' : 'border-transparent hover:bg-gray-100']">
               <div class="text-blue-500 mt-1"><Clock4 /></div>
               <div>
                 <h4 class="font-bold text-base text-gray-800">Latar Belakang</h4>
@@ -79,7 +79,7 @@ const detailData = {
               </div>
             </button>
 
-            <button @click="activeMenu = 'bidangUsaha'" :class="['w-full flex gap-4 p-4 rounded-xl text-left transition-all duration-300 border-l-4', activeMenu === 'bidangUsaha' ? 'bg-blue-50 border-blue-600 shadow-sm' : 'border-transparent hover:bg-gray-100']">
+            <button @click="activeMenu = 'bidangUsaha'" :class="['w-full flex gap-4 p-4 rounded-md text-left transition-all duration-300 border-l-4', activeMenu === 'bidangUsaha' ? ' border-blue-600 shadow-sm' : 'border-transparent hover:bg-gray-100']">
               <div class="text-blue-500 mt-1"><BriefcaseBusiness /></div>
               <div>
                 <h4 class="font-bold text-base text-gray-800">Bidang Usaha</h4>
@@ -87,7 +87,7 @@ const detailData = {
               </div>
             </button>
 
-            <button @click="activeMenu = 'fokusSolusi'" :class="['w-full flex gap-4 p-4 rounded-xl text-left transition-all duration-300 border-l-4', activeMenu === 'fokusSolusi' ? 'bg-blue-50 border-blue-600 shadow-sm' : 'border-transparent hover:bg-gray-100']">
+            <button @click="activeMenu = 'fokusSolusi'" :class="['w-full flex gap-4 p-4 rounded-md text-left transition-all duration-300 border-l-4', activeMenu === 'fokusSolusi' ? ' border-blue-600 shadow-sm' : 'border-transparent hover:bg-gray-100']">
               <div class="text-blue-500 mt-1"><Building2 /></div>
               <div>
                 <h4 class="font-bold text-base text-gray-800">Fokus Solusi</h4>
@@ -95,7 +95,7 @@ const detailData = {
               </div>
             </button>
 
-            <button @click="activeMenu = 'areaOperasional'" :class="['w-full flex gap-4 p-4 rounded-xl text-left transition-all duration-300 border-l-4', activeMenu === 'areaOperasional' ? 'bg-blue-50 border-blue-600 shadow-sm' : 'border-transparent hover:bg-gray-100']">
+            <button @click="activeMenu = 'areaOperasional'" :class="['w-full flex gap-4 p-4 rounded-md text-left transition-all duration-300 border-l-4', activeMenu === 'areaOperasional' ? ' border-blue-600 shadow-sm' : 'border-transparent hover:bg-gray-100']">
               <div class="text-blue-500 mt-1"><MapPin /></div>
               <div>
                 <h4 class="font-bold text-base text-gray-800">Area Operasional</h4>
@@ -108,7 +108,7 @@ const detailData = {
         <div class="min-h-125 bg-white rounded-2xl shadow-xl border border-gray-100 p-8 md:p-10 flex flex-col justify-center relative overflow-hidden">
           <div class="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 rounded-full bg-blue-50 opacity-50 z-0 pointer-events-none"></div>
           <div class="relative z-10">
-            <span class="inline-block py-1.5 px-4 rounded-full bg-blue-100 text-blue-700 text-xs font-bold mb-6 tracking-wide">
+            <span class="inline-block py-1.5 px-4 rounded-full text-blue-500 border text-xs font-bold mb-6 tracking-wide">
               Informasi Detail
             </span>
             <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6 leading-tight">
@@ -120,7 +120,7 @@ const detailData = {
                 <div 
                   v-for="(office, idx) in detailData.areaOperasional.offices" 
                   :key="idx"
-                  class="p-4 bg-gray-50 rounded-xl border border-gray-200/80 hover:border-blue-300 transition-colors"
+                  class="p-4 bg-gray-50 rounded-md border border-gray-200/80 hover:border-blue-300 transition-colors"
                 >
                   <div class="flex items-center justify-between mb-2">
                     <h4 class="font-bold text-gray-800 text-base flex items-center gap-2">

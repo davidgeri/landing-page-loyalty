@@ -95,3 +95,11 @@ export interface OutlinePillPing {
     classPil: string 
     bgPing: string 
 }
+
+//* FloatingText CM
+export interface FloatingTextCm {
+    icon : Component
+    heading : string 
+    title : string 
+    positionClass?: string
+}

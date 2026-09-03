@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import type { Component } from 'vue'
+import OutlinePill from '../../components/outlinepill/OutlinePill.vue'
 
 interface Title {
     titleFirst: string
@@ -30,9 +31,8 @@ const props = defineProps<Props>()
 <template>
     <div class="lg:col-span-5 space-y-8 text-left">
         <div>
-            <span
-                class="inline-block px-3 py-1 bg-blue-50 border border-blue-200 text-[10px] font-semibold text-[#0c6cf2] rounded-full uppercase tracking-wider">
-                {{ props.data.heading }}
+            <span class="flex justify-start">
+                <OutlinePill text="Request Demo" class-pil="text-blue-500" />
             </span>
         </div>
 

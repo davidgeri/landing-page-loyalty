@@ -84,7 +84,7 @@ const Tooltip = '<div class="flex gap-1 text-sm">Mulai Coba <span class="-mr-1 i
                     <p class="hidden md:block">Cakra Loyalty</p>
                 </div>
                 
-                <RouterLink to="/products">
+                <RouterLink to="/product">
                     <img class="h-auto w-full object-contain" :src="dataHero.images" :alt="dataHero.alt_img">
                 </RouterLink>
             </div>

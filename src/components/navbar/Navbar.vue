@@ -29,7 +29,7 @@ const current_contact = {
 <template>
   <nav class="w-full py-3 fixed bg-white z-50">
     <div class="max-w-6xl mx-auto flex items-center justify-between gap-2 px-3">
-      <a href="/">
+      <RouterLink to="/" class="hover:opacity-70 duration-200">
         <img
           :src="asset_image.images"
           :alt="asset_image.alt_Data"
@@ -37,7 +37,7 @@ const current_contact = {
           height="100"
           fetchpriority="high"
         />
-      </a>
+      </RouterLink>
 
       <ul class="hidden md:flex md:flex-row md:gap-10">
         <li 
@@ -52,7 +52,7 @@ const current_contact = {
 
           <div 
             v-if="item.name === 'Contact'"
-            class="absolute top-full left-1/2 -translate-x-1/2 py-6 mt-3 w-64 bg-white rounded-lg  border border-gray-100 p-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-1 group-hover:translate-y-0 backdrop-blur-xl"
+            class="absolute top-full left-1/2 -translate-x-1/2 py-6 mt-3 w-64 bg-white rounded-lg  border border-gray-300 p-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-1 group-hover:translate-y-0"
           >
             <div class="flex flex-col gap-3 text-sm">
               <a href="tel:+6281234567890" class="flex items-center gap-3 text-gray-700 hover:text-stone-600">

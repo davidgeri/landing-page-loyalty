@@ -36,13 +36,13 @@ const benefits = [
 </script>
 
 <template>
-  <section class="py-20 bg-slate-50/50">
+  <section class="py-20 ">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight leading-[1.15]">
           Manfaat yang Anda 
-          <span class="inline-block border-2 border-dashed border-blue-600 px-3 py-0.5 rounded-xl text-blue-600 mx-1">
+          <span class="inline-block border-2 border-dashed border-blue-600 px-3 py-0.5 rounded-sm text-blue-600 mx-1">
             Rasakan
           </span>
         </h2>
@@ -59,7 +59,7 @@ const benefits = [
           class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group"
         >
           <div>
-            <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <div class="w-12 h-12 rounded-xl text-blue-600 flex items-center justify-center mb-6 border border-blue-500 group-hover:scale-110 transition-transform duration-300">
               <component :is="item.icon" class="w-8 h-8" />
             </div>
 

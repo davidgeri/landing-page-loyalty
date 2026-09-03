@@ -2,6 +2,7 @@
 import { useRouter } from 'vue-router'
 import { ArrowRight, Award } from '@lucide/vue'
 import CardLoyalty from '../../components/cardLoyalty/CardLoyalty.vue'
+import OutlinePillPing from '../../components/outlinepill/OutlinePillPing.vue'
 
 const router = useRouter()
 
@@ -123,20 +124,31 @@ const products = [
   }
 ]
 
+const data = {
+  title : "Produk yang kami Tawarkan",
+  desk : "Produk yang kami tawarkan yang dapat memudahkan anda dalam mengelola sistem secara lebih efisien.",
+    outlinePill: {
+    text: "Solution",
+    classPil: "text-blue-500",
+    bgPing: "bg-blue-500"
+  },
+}
+
 const goToDetail = (slug: string) => {
   router.push(`/product/${slug}`)
 }
 </script>
 
 <template>
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 bg-gray-50/50">
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
     <div class="text-center mb-12">
-      <span class="inline-flex items-center px-4 py-1.5 rounded-full border border-blue-200 text-blue-600 bg-white text-sm font-medium mb-4">
-        <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"></span> Product
+            <span class="flex justify-center">
+        <OutlinePillPing :text="data.outlinePill.text" :class-pil="data.outlinePill.classPil"
+          :bg-ping="data.outlinePill.bgPing" />
       </span>
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Produk yang kami Tawarkan</h2>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">{{ data.title }}</h2>
       <p class="text-gray-600 max-w-2xl mx-auto text-base">
-        Produk yang kami tawarkan yang dapat memudahkan anda dalam mengelola sistem secara lebih efisien
+        {{ data.desk }}
       </p>
     </div>
 

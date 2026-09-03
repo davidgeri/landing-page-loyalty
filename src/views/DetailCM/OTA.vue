@@ -43,7 +43,7 @@ const otaList = [
           <img 
             :src="ota.logo" 
             :alt="ota.name" 
-            class="max-h-10 max-w-[120px] object-contain filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
+            class="max-h-10 max-w-30 opacity-100 object-contain filter md:grayscale md:opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
           />
         </div>
       </div>
