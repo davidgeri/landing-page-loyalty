@@ -128,7 +128,7 @@ const data = {
   title : "Produk yang kami Tawarkan",
   desk : "Produk yang kami tawarkan yang dapat memudahkan anda dalam mengelola sistem secara lebih efisien.",
     outlinePill: {
-    text: "Solution",
+    text: "Products",
     classPil: "text-blue-500",
     bgPing: "bg-blue-500"
   },
@@ -202,7 +202,7 @@ const goToDetail = (slug: string) => {
             v-else
             :src="item.image"
             :alt="`Dashboard ${item.title}`"
-            :class="['h-auto object-cover rounded shadow-sm border border-gray-100 bg-gray-100', item.isFullWidth ? 'w-full max-w-lg rounded-lg' : 'w-full min-h-30']"
+            :class="['h-auto object-cover rounded shadow-sm border border-gray-100 ', item.isFullWidth ? 'w-full max-w-lg rounded-lg' : 'w-full min-h-30']"
           />
         </div>
       </div>

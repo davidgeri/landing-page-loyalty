@@ -3,6 +3,7 @@ import Navbar from '../../components/navbar/Navbar.vue';
 import FooterComponent from '../../components/footer/FooterComponent.vue';
 import { ref, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
+import {CircleCheck, ChevronLeft} from "@lucide/vue"
 
 interface ProductType {
   slug : string 
@@ -78,15 +79,15 @@ onMounted(() => {
 
   <div v-if="product" class="max-w-5xl mx-auto px-4 pt-16 sm:px-6 lg:px-8 py-16">
     
-    <button @click="router.back()" class="text-gray-500 hover:text-blue-600 mb-10 flex items-center gap-2 font-medium">
-      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+    <button @click="router.back()" class="text-gray-500 hover:text-blue-600 mb-10 flex items-center gap-2 font-medium group">
+      <ChevronLeft class="w-5 h-5 group-hover:-translate-x-1 duration-300" />
       Kembali ke Daftar Produk
     </button>
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
       
       <div>
-        <div class="flex items-center gap-4 mb-6 pb-6 border-b border-gray-100">
+        <div class="flex items-center gap-4 mb-6 pb-6">
           <img :src="product.icon" class="w-16 h-16 object-contain" alt="Icon">
           <h1 class="text-3xl md:text-4xl font-bold text-gray-800">{{ product.title }}</h1>
         </div>
@@ -103,22 +104,22 @@ onMounted(() => {
         <h3 class="text-lg font-semibold text-gray-800 mb-4">Keunggulan Utama:</h3>
         <ul class="space-y-4 mb-10">
           <li v-for="(adv, i) in product.advantages" :key="i" class="flex items-start gap-3">
-            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mt-0.5">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
-            </div>
+              <div class="flex justify-center items-center">
+                <CircleCheck class="w-7 h-7 text-blue-500" />
+              </div>
             <span class="text-gray-700">{{ adv }}</span>
           </li>
         </ul>
         <button 
           @click="$router.push('/request-demo')"
-          class="px-8 py-3.5 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors shadow-md w-full sm:w-auto"
+          class="px-10 cursor-pointer py-2 bg-blue-500 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-md w-full sm:w-auto "
         >
-          Request Demo Sekarang
+          Request Demo
         </button>
       </div>
 
-      <div v-if="product.image" class="hidden lg:block bg-gray-50 rounded-2xl p-6 border border-gray-200">
-        <img :src="product.image" :alt="`Preview ${product.title}`" class="w-full h-auto rounded-xl shadow-sm">
+      <div v-if="product.image" class="hidden lg:block rounded-md p-6 ">
+        <img :src="product.image" :alt="`Preview ${product.title}`" class="w-full h-auto rounded-sm border border-gray-100 shadow-sm">
       </div>      
     </div>
   </div>

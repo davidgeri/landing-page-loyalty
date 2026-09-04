@@ -24,7 +24,7 @@ const data = {
   title : "Kelebihan dari produk Kami",
   desk : "Kelebihan dan keuntungan yang bisa anda dapatkan jika menggunakan produk kami",
   outlinePill: {
-    text: "Solution",
+    text: "Benefits",
     classPil: "text-blue-500",
     bgPing: "bg-blue-500"
   },

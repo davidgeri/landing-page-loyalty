@@ -103,3 +103,5 @@ export interface FloatingTextCm {
     title : string 
     positionClass?: string
 }
+
+//* Composable FetchApi
