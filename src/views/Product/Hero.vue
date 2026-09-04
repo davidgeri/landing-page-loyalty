@@ -9,6 +9,7 @@ import OutlinePill from '../../components/outlinepill/OutlinePill.vue'
   }
 
   interface RightSide {
+    tooltip : string 
     image : string 
     alt : string
     class : string 
@@ -17,6 +18,11 @@ import OutlinePill from '../../components/outlinepill/OutlinePill.vue'
   interface Props {
     Leftside : Leftside
     Rightside : RightSide[]
+  }
+
+  const handlerToolTips = (value : string ) => {
+    const Tooltip = `<div class="flex gap-1 text-sm">${value}<span class="-mr-1 inline-flex items-center justify-center leading-none px-1.5 rounded-sm bg-sky-500 text-xs font-semibold font-mono">TRY NOW</span></div>`;
+    return Tooltip
   }
 
   const props = defineProps<Props>()
@@ -48,6 +54,7 @@ import OutlinePill from '../../components/outlinepill/OutlinePill.vue'
           :src="item.image" 
           :alt="item.alt" 
           :class="item.class" 
+          v-tooltip.top="{ value: handlerToolTips(item.tooltip), escape: false }"
         />
       </di>
     </div>
