@@ -1,37 +1,59 @@
 <script setup lang="ts">
 import OutlinePill from '../../components/outlinepill/OutlinePill.vue'
+import ButtonVue from '../../components/button/ButtonVue.vue'
+import { ref } from 'vue'
+import { RouterLink } from 'vue-router'
+import type { ShowImageType } from '../../type/main'
 
-  interface Leftside {
-    heading : string
-    title : string 
-    importantTitle : string
-    desk : string
+const ShowImage = ref<ShowImageType>({
+  path: '',
+  to: ''
+})
+
+interface Leftside {
+  heading: string
+  title: string
+  importantTitle: string
+  desk: string
+}
+
+interface RightSide {
+  tooltip: string
+  image: string
+  alt: string
+  class: string
+  to?: string 
+}
+
+interface Props {
+  Leftside: Leftside
+  Rightside: RightSide[]
+}
+
+const handlerToolTips = (value: string) => {
+  const Tooltip = `<div class="flex gap-1 text-sm">${value}<span class="-mr-1 inline-flex items-center justify-center leading-none px-1.5 rounded-sm bg-sky-500 text-xs font-semibold font-mono">TRY NOW</span></div>`;
+  return Tooltip
+}
+
+const props = defineProps<Props>()
+
+const HandleShowImg = (imgPath: string, to: string) => {
+  ShowImage.value = {
+    path: imgPath,
+    to: { name: 'product-detail', params: { slug: to } }
   }
+}
 
-  interface RightSide {
-    tooltip : string 
-    image : string 
-    alt : string
-    class : string 
-  }
-
-  interface Props {
-    Leftside : Leftside
-    Rightside : RightSide[]
-  }
-
-  const handlerToolTips = (value : string ) => {
-    const Tooltip = `<div class="flex gap-1 text-sm">${value}<span class="-mr-1 inline-flex items-center justify-center leading-none px-1.5 rounded-sm bg-sky-500 text-xs font-semibold font-mono">TRY NOW</span></div>`;
-    return Tooltip
-  }
-
-  const props = defineProps<Props>()
+const CloseShowImg = () => {
+  ShowImage.value.path = ''
+  ShowImage.value.to = ''
+}
 </script>
 
 <template>
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-      
+
       <div class="lg:col-span-7">
         <span class="flex justify-start">
           <OutlinePill :text="props.Leftside.heading" class-pil="text-blue-500" />
@@ -46,16 +68,40 @@ import OutlinePill from '../../components/outlinepill/OutlinePill.vue'
         </div>
       </div>
 
-      <di class="lg:col-span-5 relative w-full h-87.5 md:h-112.5 hidden md:flex justify-center items-center mt-8 lg:mt-0">
-        
-        <img 
-          v-for="(item, index) in props.Rightside"
-          :key="index"
-          :src="item.image" 
-          :alt="item.alt" 
-          :class="item.class" 
-          v-tooltip.top="{ value: handlerToolTips(item.tooltip), escape: false }"
-        />
+      <div
+        v-if="ShowImage.path !== ''"
+        class="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-md"
+        @click.self="CloseShowImg"
+      >
+        <RouterLink
+          v-if="typeof ShowImage.to !== 'string' && ShowImage.to"
+          :to="ShowImage.to"
+          @click.stop
+        >
+          <img
+            class="max-h-[90vh] max-w-[90vw] rounded-lg object-contain shadow-2xl"
+            :src="ShowImage.path"
+            :alt="ShowImage.path"
+            @click.stop
+          >
+        </RouterLink>
+
+        <img
+          v-else
+          class="max-h-[90vh] max-w-[90vw] rounded-lg object-contain shadow-2xl"
+          :src="ShowImage.path"
+          :alt="ShowImage.path"
+          @click.stop
+        >
+      </div>
+
+      <di
+        class="lg:col-span-5 relative w-full h-87.5 md:h-112.5 hidden md:flex justify-center items-center mt-8 lg:mt-0">
+
+        <ButtonVue v-for="(item, index) in props.Rightside" :key="index" v-on:click="HandleShowImg(item.image, item.to!)">
+          <img :src="item.image" :alt="item.alt" :class="item.class"
+            v-tooltip.top="{ value: handlerToolTips(item.tooltip), escape: false }" />
+        </ButtonVue>
       </di>
     </div>
   </section>

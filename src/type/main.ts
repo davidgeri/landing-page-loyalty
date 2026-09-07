@@ -77,9 +77,11 @@ export interface FaqComponent {
 //* ButtonProps
 
 export interface ButtonProps {
-    onClick: (e: MouseEvent) => void
-    class? : string
-    title? : string
+    onClick?: (e: MouseEvent) => void
+    class?: string
+    title?: string
+    type?: 'button' | 'submit' | 'reset'
+    disabled?: boolean
 }
 
 //* ProblemBe
@@ -104,4 +106,32 @@ export interface FloatingTextCm {
     positionClass?: string
 }
 
-//* Composable FetchApi
+//* Product Hero
+
+export interface ShowImageType {
+  path: string
+  to: {
+    name: string
+    params: {
+      slug: string
+    }
+  } | string
+}
+
+//* Request Demo 
+
+export interface Country {
+  name: string
+  code: string
+  dial: string
+  flag: string
+}
+
+export interface DemoForm {
+  firstName: string
+  lastName: string
+  email: string
+  phone: string
+  country: Country | null
+  message: string
+}
