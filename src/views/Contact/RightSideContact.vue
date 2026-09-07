@@ -47,7 +47,8 @@ const resetForm = () => {
 	closeNotification()
 }
 
-const url = "https://formsubmit.co/ajax/kadekisaka00@gmail.com"
+const EmailFormSubmit = import.meta.env.VITE_EMAIL
+const url = `https://formsubmit.co/ajax/${EmailFormSubmit}`
 
 const handleSubmit = async () => {
 	isSubmitting.value = true

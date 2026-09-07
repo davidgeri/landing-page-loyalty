@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useRouter } from 'vue-router'
+import { useRouter,RouterLink } from 'vue-router'
 import { ArrowRight, Award } from '@lucide/vue'
 import CardLoyalty from '../../components/cardLoyalty/CardLoyalty.vue'
 import OutlinePillPing from '../../components/outlinepill/OutlinePillPing.vue'
@@ -65,7 +65,8 @@ const products = [
     desc: 'Fitur yang memudahkan Anda mengelola semuanya dalam satu system dan terintegrasi pada departement hotel.',
     isFullWidth: false,
     icon: '/icon/frontdesk.png', 
-    image: '/assets/frontdesk-page.png'
+    image: '/assets/frontdesk-page.png',
+    button : null
   },
   {
     slug: 'point-of-sales',
@@ -73,7 +74,8 @@ const products = [
     desc: 'Solusi ampuh dan mudah digunakan untuk menangani transaksi pada semua outlet.',
     isFullWidth: false,
     icon: '/icon/pos.png',
-    image: '/assets/pos-page.png'
+    image: '/assets/pos-page.png',
+    button : null
   },
   {
     slug: 'accounting',
@@ -81,7 +83,8 @@ const products = [
     desc: 'Menawarkan pengelolaan transaksi keuangan mudah, terintegrasi, realtime, cepat, dan akurat.',
     isFullWidth: false,
     icon: '/icon/accounting.png',
-    image: '/assets/accounting-page.png'
+    image: '/assets/accounting-page.png',
+    button : null
   },
   {
     slug: 'banquet',
@@ -89,7 +92,8 @@ const products = [
     desc: 'Memberikan solusi tepat untuk menghandle kegiatan Meeting, Incentive, Convention, and Exhibition.',
     isFullWidth: false,
     icon: '/icon/banquet.png',
-    image: '/assets/banquet-page.png'
+    image: '/assets/banquet-page.png',
+    button : null,
   },
   {
     slug: 'inventory',
@@ -97,7 +101,8 @@ const products = [
     desc: 'Kami menawarkan solusi manajemen inventaris menggunakan metode FIFO, LIFO, dan Average.',
     isFullWidth: false,
     icon: '/icon/inventory.png',
-    image: '/assets/inventory-page.png'
+    image: '/assets/inventory-page.png',
+    button : null
   },
   {
     slug: 'channel-manager',
@@ -105,7 +110,8 @@ const products = [
     desc: 'Terintegrasi dengan OTA dan PMS yang bisa melakukan pembaharuan secara real time sehingga menjadi lebih efisien.',
     isFullWidth: false,
     icon: '/icon/channel-manager.png',
-    image: '/assets/channel-manager-page.png'
+    image: '/assets/channel-manager-page.png',
+    button : null
   },
   {
     slug: 'booking-engine',
@@ -113,14 +119,22 @@ const products = [
     desc: 'Cakrahub Booking Engine terintegrasi ke dalam situs web hotel untuk memfasilitasi reservasi online secara langsung.',
     isFullWidth: true,
     icon: '/icon/booking-engine.png',
-    image: '/assets/booking-engine-page.png'
+    image: '/assets/booking-engine-page.png',
+    button : {
+      name : "request demo",
+      to : "/request-demo"
+    }
   },
   {
     slug: 'cakra-loyalty',
     title: 'Cakra Loyalty',
     desc: 'Membantu hotel membangun loyalitas tamu melalui membership, tier, poin, promosi, dan reward yang terintegrasi.',
     isFullWidth: true,
-    isLoyalty: true
+    isLoyalty: true,
+    button : {
+      name : "request demo",
+      to : "/request-demo"
+    }
   }
 ]
 
@@ -182,12 +196,13 @@ const goToDetail = (slug: string) => {
               {{ item.desc }}
             </p>
           </div>
-          <button 
-            @click="$router.push('/request-demo')"
+          <RouterLink
+            v-if="item.button !== null"
+            :to="item.button.to"
             :class="['bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700 transition-colors text-sm', item.isFullWidth ? 'px-6 py-2.5' : 'px-5 py-2']"
           >
-            Request Demo
-          </button>
+            {{ item.button.name }}
+          </RouterLink>
         </div>
 
         <div :class="['flex items-center justify-center', item.isFullWidth ? 'w-full md:w-1/2 justify-end' : 'w-full sm:w-[45%]']">
