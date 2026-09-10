@@ -51,7 +51,7 @@ const button = {
 </script>
 
 <template>
-  <div class="min-h-screen bg-white font-sans text-gray-800 selection:bg-blue-100">
+  <div class="min-h-screen overflow-hidden bg-white font-sans text-gray-800 selection:bg-blue-100">
 
     <Navbar />
 
