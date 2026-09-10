@@ -3,7 +3,7 @@ import { ref } from "vue"
 
 export const HandleFetchApi = async (url: string, option: AxiosRequestConfig = {}) => {
     const error = ref<Error | null>(null)
-    const response = ref<unknown>(null)
+    const response = ref()
 
     try {
         const res = await axios({
